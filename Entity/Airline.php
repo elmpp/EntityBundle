@@ -3,6 +3,7 @@
 namespace BorderForce\Drt\EntityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * Airline
@@ -11,16 +12,19 @@ class Airline
 {
     /**
      * @var integer
+     * @JMS\Type("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $name;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $colour;
 
@@ -79,9 +83,5 @@ class Airline
     public function getColour()
     {
         return $this->colour;
-    }
-    
-    public function __toString() {
-      return (string) $this->name;
     }
 }

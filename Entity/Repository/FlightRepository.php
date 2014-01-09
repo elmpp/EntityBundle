@@ -12,22 +12,4 @@ use Doctrine\ORM\EntityRepository;
  */
 class FlightRepository extends EntityRepository
 {
-  
-  public function findByFlightNumberAndScheduledDate($flightNumber, $scheduledDate) {
-    
-    try {
-      $flight = $this->getEntityManager()->createQuery(
-        'select f from BorderForceDrtEntityBundle:Flight f
-         where f.flightNumber = :flightNumber and
-         f.scheduledDate = :scheduledDate')
-        ->setParameter('flightNumber',  $flightNumber)
-        ->setParameter('scheduledDate', $scheduledDate)
-        ->getSingleResult();
-    }
-    catch (\Doctrine\Orm\NoResultException $e) {
-      $flight = null;
-    }
-    return $flight;
-  }
-  
 }

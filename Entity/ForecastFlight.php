@@ -3,6 +3,7 @@
 namespace BorderForce\Drt\EntityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * ForecastFlight
@@ -11,26 +12,31 @@ class ForecastFlight
 {
     /**
      * @var integer
+     * @JMS\Type("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $name;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $code;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $test;
 
     /**
      * @var \BorderForce\Drt\EntityBundle\Entity\Airline
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Airline")
      */
     private $airline;
 

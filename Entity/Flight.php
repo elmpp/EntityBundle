@@ -3,6 +3,7 @@
 namespace BorderForce\Drt\EntityBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * Flight
@@ -11,51 +12,61 @@ class Flight
 {
     /**
      * @var integer
+     * @JMS\Type("integer")
      */
     private $id;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $flightNumber;
 
     /**
      * @var \DateTime
+     * @JMS\Type("DateTime")
      */
     private $scheduledDate;
 
     /**
      * @var string
+     * @JMS\Type("string")
      */
     private $origin;
 
     /**
      * @var \DateTime
+     * @JMS\Type("DateTime")
      */
     private $touchdownEstimated;
 
     /**
      * @var \DateTime
+     * @JMS\Type("DateTime")
      */
     private $touchdown;
 
     /**
      * @var \DateTime
+     * @JMS\Type("DateTime")
      */
     private $choxEstimated;
 
     /**
      * @var \DateTime
+     * @JMS\Type("DateTime")
      */
     private $chox;
 
     /**
      * @var integer
+     * @JMS\Type("integer")
      */
     private $passengers;
 
     /**
      * @var \BorderForce\Drt\EntityBundle\Entity\Airline
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Airline")
      */
     private $airline;
 
