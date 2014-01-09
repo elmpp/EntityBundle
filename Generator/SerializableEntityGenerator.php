@@ -54,6 +54,76 @@ use JMS\Serializer\Annotation as JMS;
 
         return str_replace('<spaces>', $this->spaces, $code);
     }
+    
+    /**
+     * @param ClassMetadataInfo $metadata
+     *
+     * @return string
+     */
+    protected function generateEntityBody(ClassMetadataInfo $metadata)
+    {
+        $fieldMappingProperties = $this->generateEntityFieldMappingProperties($metadata);
+        $associationMappingProperties = $this->generateEntityAssociationMappingProperties($metadata);
+        $stubMethods = $this->generateEntityStubMethods ? $this->generateEntityStubMethods($metadata) : null;
+        $lifecycleCallbackMethods = $this->generateEntityLifecycleCallbackMethods($metadata);
+        $serializableMethods = $this->generateEntitySerializableMethod($metadata);
+
+        $code = array();
+
+        if ($fieldMappingProperties) {
+            $code[] = $fieldMappingProperties;
+        }
+
+        if ($associationMappingProperties) {
+            $code[] = $associationMappingProperties;
+        }
+
+        $code[] = $this->generateEntityConstructor($metadata);
+
+        if ($stubMethods) {
+            $code[] = $stubMethods;
+        }
+
+        if ($lifecycleCallbackMethods) {
+            $code[] = $lifecycleCallbackMethods;
+        }
+        
+        if ($serializableMethods) {
+            $code[] = $serializableMethods;
+        }
+
+        return implode("\n", $code);
+    }
+    
+    /**
+     * @param string            $name
+     * @param string            $methodName
+     * @param ClassMetadataInfo $metadata
+     *
+     * @return string
+     */
+    protected function generateEntitySerializableMethod($metadata)
+    {
+        $methodName = 'getTableNameForJMS';
+        if ($this->hasMethod($methodName, $metadata)) {
+            return '';
+        }
+        $this->staticReflection[$metadata->name]['methods'][] = $methodName;
+
+        $replacements = array(
+            '<name>'        => $methodName,
+            '<methodName>'  => $methodName,
+            '<spaces>'       => sprintf('return "%s";', $metadata->getTableName())
+        );
+
+        $method = str_replace(
+            array_keys($replacements),
+            array_values($replacements),
+            static::$lifecycleCallbackMethodTemplate
+        );
+
+        return $this->prefixCodeWithSpaces($method);
+    }
   
   /**
      * @param array             $associationMapping

@@ -142,4 +142,11 @@ class ForecastFlight
     {
         return $this->airline;
     }
+    /**
+     * @getTableNameForJMS
+     */
+    public function getTableNameForJMS()
+    {
+    return "forecast_flights";// Add your code here
+    }
 }
