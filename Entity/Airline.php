@@ -85,7 +85,7 @@ class Airline
         return $this->colour;
     }
     /**
-     * @getTableNameForJMS
+     * @
      */
     public function getTableNameForJMS()
     {
