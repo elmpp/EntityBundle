@@ -288,7 +288,7 @@ class Flight
         return $this->airline;
     }
     /**
-     * @
+     * 
      */
     public function getTableNameForJMS()
     {

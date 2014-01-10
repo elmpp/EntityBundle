@@ -111,7 +111,7 @@ use JMS\Serializer\Annotation as JMS;
         $this->staticReflection[$metadata->name]['methods'][] = $methodName;
 
         $replacements = array(
-            '<name>'        => '',
+            '@<name>'        => '',
             '<methodName>'  => $methodName,
             '<spaces>'       => sprintf('return "%s";', $metadata->getTableName())
         );
