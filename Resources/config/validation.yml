@@ -1,5 +1,31 @@
-BorderForce\Drt\FlightsBundle\Entity\Flight:
+BorderForce\Drt\EntityBundle\Entity\Flight:
   constraints:
     - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
         fields: [ flightNumber, scheduledDate ]
         message: "this flight already exists for this day."
+  properties:
+    flightNumber:
+      - NotBlank: ~
+    scheduledDate:
+      - DateTime: ~
+      - NotBlank: ~
+    touchdownEstimated:
+      - DateTime: ~
+    touchdown:
+      - DateTime: ~
+    choxEstimated:
+      - DateTime: ~
+    chox:
+      - DateTime: ~
+    origin:
+      - NotBlank: ~
+      - Length:
+          min: 3
+          max: 256
+    passenger:
+      - Type:
+          - type: integer
+          - range: 
+              min: 5
+      
+    
