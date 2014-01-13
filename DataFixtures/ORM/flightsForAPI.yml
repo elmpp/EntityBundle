@@ -8,7 +8,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
 #    flightNumber:  <randomLetter()><randomLetter()><randomLetter()><randomNumber(9)>
 #    scheduledDate: <dateBetweenRelative('2 years', '1 year', 'Y-m-d')>
     scheduledDate: <dateTimeAt('2015-06-02 09:03:01')>
-    origin (unique): <city()><randomLetter()><randomLetter()>
+    origin (unique): <randomLetter()><randomLetter()>_<city()>_<randomLetter()><randomLetter()>
     touchdownEstimated: <dateTimeBetweenRelative($scheduledDate, '+75 minutes')>
     touchdown: <dateTimeBetweenRelative($touchdownEstimated, '+2 minutes')>
     choxEstimated:  <dateTimeBetweenRelative($touchdown, '4 minutes')>
