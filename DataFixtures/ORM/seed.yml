@@ -14,9 +14,9 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
   flight{1..12}:
 #    flightNumber:  <randomLetter()><randomLetter()><randomLetter()><randomNumber(9)>
 #    scheduledDate: <dateBetweenRelative('2 years', '1 year', 'Y-m-d')>
-    scheduledDate: <dateTimeAt('2015-06-02')>
+    scheduledDate: <dateTimeAt('2015-06-02 09:04:02')>
     origin (unique): <randomElement(['telford', 'chester', 'birmingham', 'london', 'kingston', 'newport', 'brixton', 'boston', 'dubai', 'washington', 'norbury', 'vienna', 'ulverston', 'barrow-in-furnace', 'amsterdam', 'berlin', 'frankfurt'])>
-    touchdownEstimated: <dateTimeBetweenRelative($scheduledDate, '18 hours')>
+    touchdownEstimated: <dateTimeBetweenRelative($scheduledDate, '+75 minutes')>
     touchdown: <dateTimeBetweenRelative($touchdownEstimated, '+2 minutes')>
     choxEstimated:  <dateTimeBetweenRelative($touchdown, '4 minutes')>
     chox:  <dateTimeBetweenRelative($choxEstimated, '2 minutes')>

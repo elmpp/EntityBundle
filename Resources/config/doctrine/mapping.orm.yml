@@ -10,7 +10,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
         strategy: AUTO
   fields:
     flightNumber:  { type: string(12), nullable: false }
-    scheduledDate: { type: date, format: 'Y-m-d', nullable: false }
+    scheduledDate: { type: datetime, format: 'yyyy-MM-dd', nullable: false }
     origin:  { type: string(50), nullable: false }
     touchdownEstimated:  { type: datetime, nullable: true, format: 'yyyy-MM-dd' }
     touchdown:  { type: datetime, nullable: true, format: 'yyyy-MM-dd' }

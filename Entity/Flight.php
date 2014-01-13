@@ -13,60 +13,70 @@ class Flight
     /**
      * @var integer
      * @JMS\Type("integer")
+     * @JMS\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("flightNumber")
      */
     private $flightNumber;
 
     /**
      * @var \DateTime
      * @JMS\Type("DateTime")
+     * @JMS\SerializedName("scheduledDate")
      */
     private $scheduledDate;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("origin")
      */
     private $origin;
 
     /**
      * @var \DateTime
      * @JMS\Type("DateTime")
+     * @JMS\SerializedName("touchdownEstimated")
      */
     private $touchdownEstimated;
 
     /**
      * @var \DateTime
      * @JMS\Type("DateTime")
+     * @JMS\SerializedName("touchdown")
      */
     private $touchdown;
 
     /**
      * @var \DateTime
      * @JMS\Type("DateTime")
+     * @JMS\SerializedName("choxEstimated")
      */
     private $choxEstimated;
 
     /**
      * @var \DateTime
      * @JMS\Type("DateTime")
+     * @JMS\SerializedName("chox")
      */
     private $chox;
 
     /**
      * @var integer
      * @JMS\Type("integer")
+     * @JMS\SerializedName("passengers")
      */
     private $passengers;
 
     /**
      * @var \BorderForce\Drt\EntityBundle\Entity\Airline
      * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Airline")
+     * @JMS\SerializedName("airline")
      */
     private $airline;
 

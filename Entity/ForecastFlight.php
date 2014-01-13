@@ -13,30 +13,35 @@ class ForecastFlight
     /**
      * @var integer
      * @JMS\Type("integer")
+     * @JMS\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("code")
      */
     private $code;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("test")
      */
     private $test;
 
     /**
      * @var \BorderForce\Drt\EntityBundle\Entity\Airline
      * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Airline")
+     * @JMS\SerializedName("airline")
      */
     private $airline;
 

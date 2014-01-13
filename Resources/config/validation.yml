@@ -22,10 +22,11 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
       - Length:
           min: 3
           max: 256
-    passenger:
-      - Type:
-          - type: integer
-          - range: 
-              min: 5
+#    passengers:
+#      - Type:
+#        type: integer
+#      - Range: 
+#          min: 5
+#          max: 700
       
     

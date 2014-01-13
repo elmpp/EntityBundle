@@ -222,6 +222,7 @@ use JMS\Serializer\Annotation as JMS;
         $lines[] = $this->spaces . '/**';
         $lines[] = $this->spaces . ' * @var ' . $this->getType($fieldMapping['type']);
         $lines[] = $this->spaces . sprintf(' * @JMS\Type("%s")', ltrim($this->getType($fieldMapping['type']), "\\"));
+        $lines[] = $this->spaces . sprintf(' * @JMS\SerializedName("%s")', $fieldMapping['fieldName']);
         //' * @JMS\Type("' . ltrim($this->getType($fieldMapping['type']), '\') . '")';
 
         if ($this->generateAnnotations) {
@@ -300,8 +301,8 @@ use JMS\Serializer\Annotation as JMS;
     
     
     protected function addJMSSerializableAssociationPropertyDocBlockEntry($associationMapping, $metadata) {
-
       $lines[] = $this->spaces . ' * @JMS\Type("' . $associationMapping['targetEntity'] . '")';
+      $lines[] = $this->spaces . ' * @JMS\SerializedName("' . $associationMapping['fieldName'] . '")';
       return $lines;
     }
 }

@@ -11,7 +11,7 @@ BorderForce\Drt\EntityBundle\Entity\Airline:
   
 BorderForce\Drt\EntityBundle\Entity\Flight:
   flight1:
-    scheduledDate: <dateTimeAt('2014-10-05')>
+    scheduledDate: <dateTimeAt('2014-10-05 09:02:04')>
     origin: 'manchester'
     touchdownEstimated: <dateTimeAt('2014-10-05 11:24:47')>
     touchdown: <dateTimeAt('2014-10-05 11:26:47')>
@@ -21,7 +21,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
     airline: @airline1
     flightNumber:  <flightNumber('manchester')>
   flight2:
-    scheduledDate: <dateTimeAt('2014-10-05')>
+    scheduledDate: <dateTimeAt('2014-10-05 09:02:04')>
     flightNumber:  lee123456789
     origin: 'leeds'
     touchdownEstimated: <dateTimeAt('2014-10-05 11:24:47')>
@@ -32,7 +32,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
     airline: @airline1
     flightNumber:  <flightNumber('leeds')>
   flight3:
-    scheduledDate: <dateTimeAt('2014-10-05')>
+    scheduledDate: <dateTimeAt('2014-10-05 09:02:04')>
     origin: 'dubai'
     touchdownEstimated: <dateTimeAt('2014-10-05 11:24:47')>
     touchdown: <dateTimeAt('2014-10-05 11:26:47')>
@@ -42,7 +42,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
     airline: @airline2
     flightNumber:  <flightNumber('dubai')>
   flight4:
-    scheduledDate: <dateTimeAt('2014-10-05')>
+    scheduledDate: <dateTimeAt('2014-10-05 09:02:04')>
     flightNumber:  kur123456789
     origin: 'kurachi'
     touchdownEstimated: <dateTimeAt('2014-10-05 11:24:47')>
@@ -53,7 +53,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
     airline: @airline2
     flightNumber:  <flightNumber('kurachi')>
   flight5:
-    scheduledDate: <dateTimeAt('2014-10-05')>
+    scheduledDate: <dateTimeAt('2014-10-05 09:02:04')>
     origin: 'amsterdam'
     touchdownEstimated: <dateTimeAt('2014-10-05 11:24:47')>
     touchdown: <dateTimeAt('2014-10-05 11:26:47')>
@@ -63,7 +63,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
     airline: @airline3
     flightNumber:  <flightNumber('amsterdam')>
   flight6:
-    scheduledDate: <dateTimeAt('2014-10-05')>
+    scheduledDate: <dateTimeAt('2014-10-05 09:02:04')>
     origin: 'rotterdam'
     touchdownEstimated: <dateTimeAt('2014-10-05 11:24:47')>
     touchdown: <dateTimeAt('2014-10-05 11:26:47')>

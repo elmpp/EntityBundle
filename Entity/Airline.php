@@ -13,18 +13,21 @@ class Airline
     /**
      * @var integer
      * @JMS\Type("integer")
+     * @JMS\SerializedName("id")
      */
     private $id;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("name")
      */
     private $name;
 
     /**
      * @var string
      * @JMS\Type("string")
+     * @JMS\SerializedName("colour")
      */
     private $colour;
 
