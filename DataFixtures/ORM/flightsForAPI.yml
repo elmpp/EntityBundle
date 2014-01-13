@@ -1,0 +1,19 @@
+BorderForce\Drt\EntityBundle\Entity\Airline:
+  airline1:
+    name: British Airlines
+    colour: White
+    
+BorderForce\Drt\EntityBundle\Entity\Flight:
+  flight{1..3}:
+#    flightNumber:  <randomLetter()><randomLetter()><randomLetter()><randomNumber(9)>
+#    scheduledDate: <dateBetweenRelative('2 years', '1 year', 'Y-m-d')>
+    scheduledDate: <dateTimeAt('2015-06-02 09:00:01')>
+    origin (unique): <city()><randomLetter()><randomLetter()>
+    touchdownEstimated: <dateTimeBetweenRelative($scheduledDate, '18 hours')>
+    touchdown: <dateTimeBetweenRelative($touchdownEstimated, '+2 minutes')>
+    choxEstimated:  <dateTimeBetweenRelative($touchdown, '4 minutes')>
+    chox:  <dateTimeBetweenRelative($choxEstimated, '2 minutes')>
+    passengers: 80%? <numberBetween(100, 500)>
+    airline: @airline*
+#    airline: <randomElement(['British Airlines', 'KLM', 'Emirates'])>
+    flightNumber: <flightNumber($origin)>

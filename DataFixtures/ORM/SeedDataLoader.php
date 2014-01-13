@@ -1,6 +1,6 @@
 <?php
 
-namespace BorderForce\Drt\EntityBundle\DataFixtures;
+namespace BorderForce\Drt\EntityBundle\DataFixtures\ORM;
 
 use Hautelook\AliceBundle\Alice\DataFixtureLoader;
 use Nelmio\Alice\Fixtures;
