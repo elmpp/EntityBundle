@@ -47,6 +47,6 @@ class SeedDataLoader extends DataFixtureLoader
     }
     
     public function flightNumber($origin) {
-      return substr($origin, 0, 3) . '123456789';
+      return substr($origin, 0, 3) . '9';
     }
 }

@@ -11,11 +11,11 @@ BorderForce\Drt\EntityBundle\Entity\Airline:
     colour: Orange
   
 BorderForce\Drt\EntityBundle\Entity\Flight:
-  flight{1..12}:
+  flight{1..24}:
 #    flightNumber:  <randomLetter()><randomLetter()><randomLetter()><randomNumber(9)>
 #    scheduledDate: <dateBetweenRelative('2 years', '1 year', 'Y-m-d')>
-    scheduledDate: <dateTimeAt('2015-06-02 09:04:02')>
-    origin (unique): <randomElement(['telford', 'chester', 'birmingham', 'london', 'kingston', 'newport', 'brixton', 'boston', 'dubai', 'washington', 'norbury', 'vienna', 'ulverston', 'barrow-in-furnace', 'amsterdam', 'berlin', 'frankfurt'])>
+    scheduledDate: <dateTimeAt('2015-06-02 09:04')>
+    origin (unique): <randomElement(['telford', 'chester', 'birmingham', 'london', 'kingston', 'newport', 'brixton', 'boston', 'dubai', 'washington', 'norbury', 'vienna', 'ulverston','barrow-in-furnace', 'amsterdam', 'berlin', 'frankfurt', 'glasgow', 'edinburgh', 'stockport', 'Southampton', 'Malmo', 'Rotterdam', 'Milan', 'Rome', 'Marseilles', 'Lyon', 'Paris', 'Liege'])>
     touchdownEstimated: <dateTimeBetweenRelative($scheduledDate, '+75 minutes')>
     touchdown: <dateTimeBetweenRelative($touchdownEstimated, '+2 minutes')>
     choxEstimated:  <dateTimeBetweenRelative($touchdown, '4 minutes')>
