@@ -5,6 +5,8 @@ namespace BorderForce\Drt\EntityBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 
 class FlightType extends AbstractType
 {
@@ -19,31 +21,16 @@ class FlightType extends AbstractType
       
       $builder
         ->add('flightNumber')
-//        ->add('flightNumber', 'text', array('error_bubbling' => true))
-        ->add('scheduledDate', 'date', array('widget' => 'single_text', 'format' => 'dd-MM-yyyy'))
         ->add('origin')
-        ->add('touchdownEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:mm'))
-//            ->add('touchdownEstimated', 'datetime', array('input' => 'datetime', 'time_widget' => 'single_text', 'date_widget' => 'single_text', 'date_format' => 'yyyy-MM-dd'))
-        ->add('touchdown', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:mm'))
-        ->add('choxEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:mm'))
-        ->add('chox', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:mm'))
-//            ->add('touchdown', 'datetime', array('time_widget' => 'single_text', 'date_widget' => 'single_text', 'date_format' => 'yyyy-MM-dd'))
-//            ->add('choxEstimated', 'datetime', array('time_widget' => 'single_text', 'date_widget' => 'single_text', 'date_format' => 'yyyy-MM-dd'))
-//            ->add('chox', 'datetime', array('time_widget' => 'single_text', 'date_widget' => 'single_text', 'date_format' => 'yyyy-MM-dd'))
+        ->add('scheduledDate', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
+        ->add('touchdownEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
+        ->add('touchdown', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
+        ->add('choxEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
+        ->add('chox', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('passengers')
         ->add(
-//          $builder->create('airline', 'entity', array('class' => 'BorderForceDrtEntityBundle:Airline', 'property' => 'name', 'empty_value' => ""))->addModelTransformer($transformer)
           $builder->create('airline', 'text', array())->addModelTransformer($transformer)
           )
-//            ->add('flightNumber')
-//            ->add('scheduledDate')
-//            ->add('origin')
-//            ->add('touchdownEstimated')
-//            ->add('touchdown')
-//            ->add('choxEstimated')
-//            ->add('chox')
-//            ->add('passengers')
-//            ->add('airline')
         ;
     }
     
@@ -69,6 +56,6 @@ class FlightType extends AbstractType
      */
     public function getName()
     {
-        return 'flight';
+        return '';
     }
 }
