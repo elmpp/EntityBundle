@@ -28,8 +28,8 @@ class FlightType extends AbstractType
         ->add('choxEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('chox', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('passengers')
-        ->add(
-          $builder->create('airline', 'text', array())->addModelTransformer($transformer)
+        ->add('airline'
+//          $builder->create('airline', 'text', array())->addModelTransformer($transformer)
           )
         ;
     }
