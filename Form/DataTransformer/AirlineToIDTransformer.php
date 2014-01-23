@@ -4,22 +4,32 @@ namespace BorderForce\Drt\EntityBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
-use Doctrine\Common\Persistence\ObjectManager;
 use BorderForce\Drt\EntityBundle\Entity\Flight;
+//use Symfony\Component\DependencyInjection\ContainerInterface;
+//use JMS\Serializer\Serializer;
 
 class AirlineToIDTransformer implements DataTransformerInterface
 {
     /**
      * @var ObjectManager
      */
-    private $om;
+    private $em;
+    
+    /**
+     * @var String
+     */
+    private $fqcn;
+    
+    private $serializer;
 
     /**
      * @param ObjectManager $om
      */
-    public function __construct(ObjectManager $om)
+    public function __construct(\Doctrine\Common\Persistence\ObjectManager $em, \JMS\Serializer\Serializer $serializer, $fqcn)
     {
-        $this->om = $om;
+        $this->em   = $em;
+        $this->serializer   = $serializer;
+        $this->fqcn      = $fqcn;
     }
 
     /**
@@ -46,27 +56,43 @@ class AirlineToIDTransformer implements DataTransformerInterface
      *
      * @throws TransformationFailedException if object (airline) is not found.
      */
-    public function reverseTransform($numberOrName)
+    public function reverseTransform($data)
     {
-        if (!$numberOrName) {
-            return null;
-        }
+      
+      
+//      $airline = $this->serializer->deserialize($data, $this->fqcn, 'array');
+      if (count($data)) {
+        if (isset($data['id'])) {
+          $airline = $this->em->getRepository('BorderForceDrtEntityBundle:Airline')->find($data['id']);
 
-        $query = $this->om->createQuery(
-          'select a from BorderForceDrtEntityBundle:Airline a
-           where a.id = :numberOrName or a.name = :numberOrName')
-          ->setParameter('numberOrName', $numberOrName);
-        try {
-          $airline = $query->getSingleResult();
-        } 
-        catch (\Doctrine\Orm\NoResultException $e) {
-          throw new TransformationFailedException(sprintf(
-            'An airline with ID or name "%s" does not exist!',
-            $numberOrName
-          ));
+          if (!$airline) {
+            throw new TransformationFailedException(sprintf(
+              'An airline with ID "%d" does not exist!',
+              $data['id']
+            ));
+          }
+          return $airline;
         }
+        
+        
+      }
+      
 
-        return $airline;
+//        $query = $this->om->createQuery(
+//          'select a from BorderForceDrtEntityBundle:Airline a
+//           where a.id = :numberOrName or a.name = :numberOrName')
+//          ->setParameter('numberOrName', $numberOrName);
+//        try {
+//          $airline = $query->getSingleResult();
+//        } 
+//        catch (\Doctrine\Orm\NoResultException $e) {
+//          throw new TransformationFailedException(sprintf(
+//            'An airline with ID or name "%s" does not exist!',
+//            $numberOrName
+//          ));
+//        }
+//
+//        return $airline;
     }
 
 }

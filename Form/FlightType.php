@@ -16,8 +16,12 @@ class FlightType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-      $entityManager = $options['em'];
-      $transformer = new DataTransformer\AirlineToIDTransformer($entityManager);
+      $airlineTransformer = new DataTransformer\AirlineToIDTransformer(
+        $options['em'],
+        $options['serializer'],
+        '\BorderForce\Drt\EntityBundle\Entity\Airline'
+      );
+      
       
       $builder
         ->add('flightNumber')
@@ -28,8 +32,8 @@ class FlightType extends AbstractType
         ->add('choxEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('chox', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('passengers')
-        ->add('airline'
-//          $builder->create('airline', 'text', array())->addModelTransformer($transformer)
+        ->add(
+          $builder->create('airline', 'text', array())->addModelTransformer($airlineTransformer)
           )
         ;
     }
@@ -48,6 +52,12 @@ class FlightType extends AbstractType
       ))
       ->setAllowedTypes(array(
         'em' => 'Doctrine\Common\Persistence\ObjectManager',
+      ))
+      ->setRequired(array(
+        'serializer',
+      ))
+      ->setAllowedTypes(array(
+        'serializer' => 'JMS\Serializer\Serializer',
       ));
     }
 

@@ -22,6 +22,8 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
       - Length:
           min: 3
           max: 256
+#    airline:
+#      - NotBlank: ~
 #    passengers:
 #      - Type:
 #        type: integer

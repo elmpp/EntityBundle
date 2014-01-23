@@ -25,6 +25,7 @@ BorderForce\Drt\EntityBundle\Entity\Flight:
       joinColumn:
         name: airline_id
         referencedColumnName: id
+        nullable: false
   uniqueConstraints:
     flightNumberDate:
       columns: [ flightNumber, scheduledDate ]
