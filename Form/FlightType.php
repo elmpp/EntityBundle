@@ -16,7 +16,7 @@ class FlightType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-      $airlineTransformer = new DataTransformer\AirlineToIDTransformer(
+      $airlineTransformer = new DataTransformer\EntityToIDTransformer(
         $options['em'],
         $options['serializer'],
         '\BorderForce\Drt\EntityBundle\Entity\Airline'
