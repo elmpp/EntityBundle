@@ -5,10 +5,9 @@ namespace BorderForce\Drt\EntityBundle\Form\DataTransformer;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 use BorderForce\Drt\EntityBundle\Entity\Flight;
-//use Symfony\Component\DependencyInjection\ContainerInterface;
-//use JMS\Serializer\Serializer;
+use BorderForce\Drt\EntityBundle\Util\Util;
 
-class AirlineToIDTransformer implements DataTransformerInterface
+class EntityToIDTransformer implements DataTransformerInterface
 {
     /**
      * @var ObjectManager
@@ -21,30 +20,36 @@ class AirlineToIDTransformer implements DataTransformerInterface
     private $fqcn;
     
     private $serializer;
+    private $form;
 
     /**
      * @param ObjectManager $om
      */
-    public function __construct(\Doctrine\Common\Persistence\ObjectManager $em, \JMS\Serializer\Serializer $serializer, $fqcn)
+    public function __construct(\Doctrine\Common\Persistence\ObjectManager $em, \JMS\Serializer\Serializer $serializer, $fqcn, \Symfony\Component\Form\AbstractType $form)
     {
-        $this->em   = $em;
-        $this->serializer   = $serializer;
-        $this->fqcn      = $fqcn;
+        $this->em         = $em;
+        $this->serializer = $serializer;
+        $this->fqcn       = $fqcn;
+        $this->form       = $form;
     }
 
     /**
      * Transforms an object (airline) to a string (number).
      *
-     * @param  Issue|null $airline
+     * @param  Issue|null $entity
      * @return string
      */
-    public function transform($airline)
+    public function transform($entity)
     {
-        if (null === $airline) {
+        if (null === $entity) {
             return "";
         }
+        
+        if (!is_object($entity)) { 
+          return "";
+        }
 
-        return $airline->getId();
+        return $entity->getId();
     }
 
     /**
@@ -58,41 +63,33 @@ class AirlineToIDTransformer implements DataTransformerInterface
      */
     public function reverseTransform($data)
     {
+      $className = Util::getClassNameFromFCQN($this->fqcn);
       
-      
-//      $airline = $this->serializer->deserialize($data, $this->fqcn, 'array');
       if (count($data)) {
         if (isset($data['id'])) {
-          $airline = $this->em->getRepository('BorderForceDrtEntityBundle:Airline')->find($data['id']);
+          $entity = $this->em->getRepository($this->fqcn)->find($data['id']);
 
-          if (!$airline) {
+          if (!$entity) {
             throw new TransformationFailedException(sprintf(
-              'An airline with ID "%d" does not exist!',
+              'An %s with ID "%d" does not exist!',
+              $className,
               $data['id']
             ));
           }
-          return $airline;
+          return $entity;
         }
         
-        
+        //going to create our own
+        $entity = $this->serializer->deserialize(json_encode($data), $this->fqcn, 'json');
+//var_dump($this->form->getData()); die;
+        $this->em->persist($entity);
+        return $entity;
       }
       
-
-//        $query = $this->om->createQuery(
-//          'select a from BorderForceDrtEntityBundle:Airline a
-//           where a.id = :numberOrName or a.name = :numberOrName')
-//          ->setParameter('numberOrName', $numberOrName);
-//        try {
-//          $airline = $query->getSingleResult();
-//        } 
-//        catch (\Doctrine\Orm\NoResultException $e) {
-//          throw new TransformationFailedException(sprintf(
-//            'An airline with ID or name "%s" does not exist!',
-//            $numberOrName
-//          ));
-//        }
-//
-//        return $airline;
+      throw new TransformationFailedException(sprintf(
+        'No data was supplied for %s',
+        $className
+      ));
     }
 
 }
