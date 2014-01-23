@@ -82,6 +82,7 @@ BorderForce\Drt\EntityBundle\Entity\ForecastFlight:
 #    postPersist: [ doStuffOnPostPersist ]
 BorderForce\Drt\EntityBundle\Entity\Airline:
   type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\AirlineRepository
   table: airlines
   id:
     id:
