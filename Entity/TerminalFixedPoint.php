@@ -18,8 +18,8 @@ class TerminalFixedPoint
     private $id;
 
     /**
-     * @var bool
-     * @JMS\Type("bool")
+     * @var boolean
+     * @JMS\Type("boolean")
      * @JMS\SerializedName("active")
      */
     private $active;
@@ -32,8 +32,8 @@ class TerminalFixedPoint
     private $Terminal;
 
     /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\FixedPointsTypes
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\FixedPointsTypes")
+     * @var \BorderForce\Drt\EntityBundle\Entity\FixedPointType
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\FixedPointType")
      * @JMS\SerializedName("FixedPointsTypes")
      */
     private $FixedPointsTypes;
@@ -52,10 +52,10 @@ class TerminalFixedPoint
     /**
      * Set active
      *
-     * @param \bool $active
+     * @param boolean $active
      * @return TerminalFixedPoint
      */
-    public function setActive(\bool $active)
+    public function setActive($active)
     {
         $this->active = $active;
 
@@ -65,7 +65,7 @@ class TerminalFixedPoint
     /**
      * Get active
      *
-     * @return \bool 
+     * @return boolean 
      */
     public function getActive()
     {
@@ -98,10 +98,10 @@ class TerminalFixedPoint
     /**
      * Set FixedPointsTypes
      *
-     * @param \BorderForce\Drt\EntityBundle\Entity\FixedPointsTypes $fixedPointsTypes
+     * @param \BorderForce\Drt\EntityBundle\Entity\FixedPointType $fixedPointsTypes
      * @return TerminalFixedPoint
      */
-    public function setFixedPointsTypes(\BorderForce\Drt\EntityBundle\Entity\FixedPointsTypes $fixedPointsTypes = null)
+    public function setFixedPointsTypes(\BorderForce\Drt\EntityBundle\Entity\FixedPointType $fixedPointsTypes = null)
     {
         $this->FixedPointsTypes = $fixedPointsTypes;
 
@@ -111,7 +111,7 @@ class TerminalFixedPoint
     /**
      * Get FixedPointsTypes
      *
-     * @return \BorderForce\Drt\EntityBundle\Entity\FixedPointsTypes 
+     * @return \BorderForce\Drt\EntityBundle\Entity\FixedPointType 
      */
     public function getFixedPointsTypes()
     {

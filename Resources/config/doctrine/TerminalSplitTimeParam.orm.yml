@@ -2,14 +2,16 @@ BorderForce\Drt\EntityBundle\Entity\TerminalSplitTimeParam:
   type: entity
   repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalSplitTimeParamRepository
   table: terminal_split_time_param
-#  attributeOverride:
-#    DayOfWeek:  { type: string(10), nullable: false, name: day_of_week }
-#    MonthOfYear:  { type: string(10), nullable: false, name: month_of_year }
-#    HourOfDay:  { type: integer(8), nullable: false, name: hour_of_day }
   manyToOne:
     TerminalPaxSplit:
       targetEntity: TerminalPaxSplit
       inversedBy: ParamSplitTime
       joinColumn:
         name: terminal_split_time_id
+        referencedColumnName: id
+    PaxSplitClass:
+      targetEntity: PaxSplitClass
+      inversedBy: PaxParamSplitTime
+      joinColumn:
+        name: pax_split_time_class_id
         referencedColumnName: id

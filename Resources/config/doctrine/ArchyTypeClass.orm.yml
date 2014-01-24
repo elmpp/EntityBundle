@@ -1,7 +1,7 @@
 BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass:
   type: entity
   repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\ArchyTypeRepository
-  table: archytype
+  table: archy_type_class
   id:
     id:
       type: integer
@@ -9,5 +9,11 @@ BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass:
       generator:
         strategy: AUTO
   fields:
-    name:  { type: string(5), nullable: false }
-    priority:  { type: string(15), nullable: false }
+    name:  { type: string(30), nullable: false }
+  manyToOne:
+    PriorityType:
+      targetEntity: ArchyTypePriority
+      inversedBy: ArchyType
+      joinColumn:
+        name: archy_type_priority_id
+        referencedColumnName: id

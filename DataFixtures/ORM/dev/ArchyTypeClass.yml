@@ -1,0 +1,22 @@
+BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass:
+  archytypeclass1:
+    name:  "EEA at Desk"
+    PriorityType: @priority3
+  archytypeclass2:
+    name:  "EEA at egate"
+    PriorityType: @priority3
+  archytypeclass3:
+    name:  "NON VISA to fast track"
+    PriorityType: @priority3
+  archytypeclass4:
+    name:  "VISA to fast track"
+    PriorityType: @priority3
+  archytypeclass5:
+    name:  "NON VISA to desk"
+    PriorityType: @priority3
+  archytypeclass6:
+    name:  "VISA to desk"
+    PriorityType: @priority3
+  archytypeclass7:
+    name:  "Transit to desk"
+    PriorityType: @priority3

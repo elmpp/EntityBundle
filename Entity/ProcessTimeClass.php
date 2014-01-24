@@ -20,9 +20,9 @@ class ProcessTimeClass
     /**
      * @var string
      * @JMS\Type("string")
-     * @JMS\SerializedName("processtimename")
+     * @JMS\SerializedName("name")
      */
-    private $processtimename;
+    private $name;
 
 
     /**
@@ -36,25 +36,25 @@ class ProcessTimeClass
     }
 
     /**
-     * Set processtimename
+     * Set name
      *
-     * @param string $processtimename
+     * @param string $name
      * @return ProcessTimeClass
      */
-    public function setProcesstimename($processtimename)
+    public function setName($name)
     {
-        $this->processtimename = $processtimename;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get processtimename
+     * Get name
      *
      * @return string 
      */
-    public function getProcesstimename()
+    public function getName()
     {
-        return $this->processtimename;
+        return $this->name;
     }
 }

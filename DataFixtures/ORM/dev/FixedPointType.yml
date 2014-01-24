@@ -1,0 +1,15 @@
+BorderForce\Drt\EntityBundle\Entity\FixedPointType:
+  fp1:
+    name:  "NON-EEA"
+  fp2:
+    name:  "EEA"
+  fp3:
+    name:  "Egate Monitoring"
+  fp4:
+    name:  "Acs Reference"
+  fp5:
+    name:  "Fast track"
+  fp6:
+    name:  "Other"
+  fp7:
+    name:  "Transfer"

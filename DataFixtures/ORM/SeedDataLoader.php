@@ -13,16 +13,39 @@ class SeedDataLoader extends DataFixtureLoader
      */
     protected function getFixtures()
     {
+      $folder = __DIR__.'/'.$this->container->getParameter('kernel.environment');
 
       if ($this->container->getParameter('kernel.environment') == 'test') {
         return  array(
-          __DIR__ . '/seed_test.yml',
+            $folder . '/PortType.yml',
+            $folder . '/QueueClass.yml',
+            $folder . '/PaxSplitClass.yml',
+            $folder . '/ProcessTimeClass.yml',
+            $folder . '/ArchyTypePriority.yml',
+            $folder . '/ArchyTypeClass.yml',
+            $folder . '/PaxCategoryClass.yml',
+            $folder . '/FixedPointType.yml',
+            $folder . '/Port.yml',
+            $folder . '/Terminal.yml',
+            $folder . '/TerminalPaxSplit.yml',
+            $folder . '/TerminalSplitTimeParam.yml'
         );
       }
       else {
-        return  array(
-          __DIR__ . '/seed.yml',
-        );
+          return  array(
+              $folder . '/PortType.yml',
+              $folder . '/QueueClass.yml',
+              $folder . '/PaxSplitClass.yml',
+              $folder . '/ProcessTimeClass.yml',
+              $folder . '/ArchyTypePriority.yml',
+              $folder . '/ArchyTypeClass.yml',
+              $folder . '/PaxCategoryClass.yml',
+              $folder . '/FixedPointType.yml',
+              $folder . '/Port.yml',
+              $folder . '/Terminal.yml',
+              $folder . '/TerminalPaxSplit.yml',
+              $folder . '/TerminalSplitTimeParam.yml'
+          );
       }
         
     }

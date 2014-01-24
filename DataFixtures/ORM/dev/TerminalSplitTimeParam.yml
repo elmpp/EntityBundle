@@ -1,0 +1,57 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalSplitTimeParam:
+  tstp1:
+    ParamValue: 40
+    isPercent: true
+    PaxSplitClass: @paxsplit1
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60
+  tstp2:
+    ParamValue: 30
+    isPercent: true
+    PaxSplitClass: @paxsplit2
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60
+  tstp3:
+    ParamValue: 30
+    isPercent: true
+    PaxSplitClass: @paxsplit3
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60
+  tstp4:
+    ParamValue: 20
+    isPercent: true
+    PaxSplitClass: @paxsplit4
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60
+  tstp5:
+    ParamValue: 5
+    isPercent: true
+    PaxSplitClass: @paxsplit5
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60
+  tstp6:
+    ParamValue: 5
+    isPercent: true
+    PaxSplitClass: @paxsplit6
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60
+  tstp7:
+    ParamValue: 10
+    isPercent: true
+    PaxSplitClass: @paxsplit7
+    hasDayOfWeek: true
+    hasMonthOfYear: true
+    hasHourOfDay: true
+    HourOfDaySlice: 60

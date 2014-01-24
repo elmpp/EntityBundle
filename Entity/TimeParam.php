@@ -177,4 +177,124 @@ class TimeParam
     {
         return $this->isPercent;
     }
+    /**
+     * @var boolean
+     * @JMS\Type("boolean")
+     * @JMS\SerializedName("hasDayOfWeek")
+     */
+    private $hasDayOfWeek;
+
+    /**
+     * @var boolean
+     * @JMS\Type("boolean")
+     * @JMS\SerializedName("hasMonthOfYear")
+     */
+    private $hasMonthOfYear;
+
+    /**
+     * @var boolean
+     * @JMS\Type("boolean")
+     * @JMS\SerializedName("hasHourOfDay")
+     */
+    private $hasHourOfDay;
+
+    /**
+     * @var integer
+     * @JMS\Type("integer")
+     * @JMS\SerializedName("HourOfDaySlice")
+     */
+    private $HourOfDaySlice;
+
+
+    /**
+     * Set hasDayOfWeek
+     *
+     * @param boolean $hasDayOfWeek
+     * @return TimeParam
+     */
+    public function setHasDayOfWeek($hasDayOfWeek)
+    {
+        $this->hasDayOfWeek = $hasDayOfWeek;
+
+        return $this;
+    }
+
+    /**
+     * Get hasDayOfWeek
+     *
+     * @return boolean
+     */
+    public function getHasDayOfWeek()
+    {
+        return $this->hasDayOfWeek;
+    }
+
+    /**
+     * Set hasMonthOfYear
+     *
+     * @param boolean $hasMonthOfYear
+     * @return TimeParam
+     */
+    public function setHasMonthOfYear($hasMonthOfYear)
+    {
+        $this->hasMonthOfYear = $hasMonthOfYear;
+
+        return $this;
+    }
+
+    /**
+     * Get hasMonthOfYear
+     *
+     * @return boolean
+     */
+    public function getHasMonthOfYear()
+    {
+        return $this->hasMonthOfYear;
+    }
+
+    /**
+     * Set hasHourOfDay
+     *
+     * @param boolean $hasHourOfDay
+     * @return TimeParam
+     */
+    public function setHasHourOfDay($hasHourOfDay)
+    {
+        $this->hasHourOfDay = $hasHourOfDay;
+
+        return $this;
+    }
+
+    /**
+     * Get hasHourOfDay
+     *
+     * @return boolean
+     */
+    public function getHasHourOfDay()
+    {
+        return $this->hasHourOfDay;
+    }
+
+    /**
+     * Set HourOfDaySlice
+     *
+     * @param integer $hourOfDaySlice
+     * @return TimeParam
+     */
+    public function setHourOfDaySlice($hourOfDaySlice)
+    {
+        $this->HourOfDaySlice = $hourOfDaySlice;
+
+        return $this;
+    }
+
+    /**
+     * Get HourOfDaySlice
+     *
+     * @return integer 
+     */
+    public function getHourOfDaySlice()
+    {
+        return $this->HourOfDaySlice;
+    }
 }

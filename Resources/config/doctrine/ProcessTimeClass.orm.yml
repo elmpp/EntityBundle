@@ -1,7 +1,7 @@
 BorderForce\Drt\EntityBundle\Entity\ProcessTimeClass:
   type: entity
   repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\ProcessTimeClassRepository
-  table: processtime
+  table: process_time_class
   id:
     id:
       type: integer
@@ -9,7 +9,7 @@ BorderForce\Drt\EntityBundle\Entity\ProcessTimeClass:
       generator:
         strategy: AUTO
   fields:
-    processtimename:  { type: string(5), nullable: false }
+    name:  { type: string(40), nullable: false }
 #  ManyToOne:
 #    Port:
 #      targetEntity: Port
@@ -19,5 +19,5 @@ BorderForce\Drt\EntityBundle\Entity\ProcessTimeClass:
 #        referencedColumnName: id
   uniqueConstraints:
     uniqueProcessTime:
-      columns: [processtimename]
+      columns: [name]
 #Timestampable, blameable, softdelete

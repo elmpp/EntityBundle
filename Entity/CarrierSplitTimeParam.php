@@ -11,96 +11,6 @@ use JMS\Serializer\Annotation as JMS;
 class CarrierSplitTimeParam extends TimeParam
 {
     /**
-     * @var string
-     * @JMS\Type("string")
-     * @JMS\SerializedName("DayOfWeek")
-     */
-    private $DayOfWeek;
-
-    /**
-     * @var string
-     * @JMS\Type("string")
-     * @JMS\SerializedName("MonthOfYear")
-     */
-    private $MonthOfYear;
-
-    /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\CarrierSplitTime
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\CarrierSplitTime")
-     * @JMS\SerializedName("CarrierSplitTime")
-     */
-    private $CarrierSplitTime;
-
-
-    /**
-     * Set DayOfWeek
-     *
-     * @param string $dayOfWeek
-     * @return CarrierSplitTimeParam
-     */
-    public function setDayOfWeek($dayOfWeek)
-    {
-        $this->DayOfWeek = $dayOfWeek;
-
-        return $this;
-    }
-
-    /**
-     * Get DayOfWeek
-     *
-     * @return string 
-     */
-    public function getDayOfWeek()
-    {
-        return $this->DayOfWeek;
-    }
-
-    /**
-     * Set MonthOfYear
-     *
-     * @param string $monthOfYear
-     * @return CarrierSplitTimeParam
-     */
-    public function setMonthOfYear($monthOfYear)
-    {
-        $this->MonthOfYear = $monthOfYear;
-
-        return $this;
-    }
-
-    /**
-     * Get MonthOfYear
-     *
-     * @return string 
-     */
-    public function getMonthOfYear()
-    {
-        return $this->MonthOfYear;
-    }
-
-    /**
-     * Set CarrierSplitTime
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\CarrierSplitTime $carrierSplitTime
-     * @return CarrierSplitTimeParam
-     */
-    public function setCarrierSplitTime(\BorderForce\Drt\EntityBundle\Entity\CarrierSplitTime $carrierSplitTime = null)
-    {
-        $this->CarrierSplitTime = $carrierSplitTime;
-
-        return $this;
-    }
-
-    /**
-     * Get CarrierSplitTime
-     *
-     * @return \BorderForce\Drt\EntityBundle\Entity\CarrierSplitTime 
-     */
-    public function getCarrierSplitTime()
-    {
-        return $this->CarrierSplitTime;
-    }
-    /**
      * @var \BorderForce\Drt\EntityBundle\Entity\CarrierDetails
      * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\CarrierDetails")
      * @JMS\SerializedName("CarrierDetails")
@@ -129,5 +39,35 @@ class CarrierSplitTimeParam extends TimeParam
     public function getCarrierDetails()
     {
         return $this->CarrierDetails;
+    }
+    /**
+     * @var \BorderForce\Drt\EntityBundle\Entity\PaxSplitClass
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\PaxSplitClass")
+     * @JMS\SerializedName("PaxSplitClass")
+     */
+    private $PaxSplitClass;
+
+
+    /**
+     * Set PaxSplitClass
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\PaxSplitClass $paxSplitClass
+     * @return CarrierSplitTimeParam
+     */
+    public function setPaxSplitClass(\BorderForce\Drt\EntityBundle\Entity\PaxSplitClass $paxSplitClass = null)
+    {
+        $this->PaxSplitClass = $paxSplitClass;
+
+        return $this;
+    }
+
+    /**
+     * Get PaxSplitClass
+     *
+     * @return \BorderForce\Drt\EntityBundle\Entity\PaxSplitClass 
+     */
+    public function getPaxSplitClass()
+    {
+        return $this->PaxSplitClass;
     }
 }

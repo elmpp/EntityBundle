@@ -18,13 +18,6 @@ class Port extends BasePort
     private $region;
 
     /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\PortType
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\PortType")
-     * @JMS\SerializedName("PortType")
-     */
-    private $PortType;
-
-    /**
      * @var \Doctrine\Common\Collections\Collection
      * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\PaxSplitClass")
      * @JMS\SerializedName("PaxSplits")
@@ -54,17 +47,17 @@ class Port extends BasePort
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\ArchTypeClass")
-     * @JMS\SerializedName("ArchTypes")
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass")
+     * @JMS\SerializedName("ArchyTypes")
      */
-    private $ArchTypes;
+    private $ArchyTypes;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\FixedPoint")
-     * @JMS\SerializedName("FixedPoints")
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\FixedPointType")
+     * @JMS\SerializedName("FixedPointTypes")
      */
-    private $FixedPoints;
+    private $FixedPointTypes;
 
     /**
      * Constructor
@@ -75,8 +68,8 @@ class Port extends BasePort
         $this->PaxCategories = new \Doctrine\Common\Collections\ArrayCollection();
         $this->ProcessTimes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->PortQueues = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->ArchTypes = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->FixedPoints = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ArchyTypes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->FixedPointTypes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -100,29 +93,6 @@ class Port extends BasePort
     public function getRegion()
     {
         return $this->region;
-    }
-
-    /**
-     * Set PortType
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\PortType $portType
-     * @return Port
-     */
-    public function setPortType(\BorderForce\Drt\EntityBundle\Entity\PortType $portType = null)
-    {
-        $this->PortType = $portType;
-
-        return $this;
-    }
-
-    /**
-     * Get PortType
-     *
-     * @return \BorderForce\Drt\EntityBundle\Entity\PortType 
-     */
-    public function getPortType()
-    {
-        return $this->PortType;
     }
 
     /**
@@ -258,79 +228,6 @@ class Port extends BasePort
     }
 
     /**
-     * Add ArchTypes
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\ArchTypeClass $archTypes
-     * @return Port
-     */
-    public function addArchType(\BorderForce\Drt\EntityBundle\Entity\ArchTypeClass $archTypes)
-    {
-        $this->ArchTypes[] = $archTypes;
-
-        return $this;
-    }
-
-    /**
-     * Remove ArchTypes
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\ArchTypeClass $archTypes
-     */
-    public function removeArchType(\BorderForce\Drt\EntityBundle\Entity\ArchTypeClass $archTypes)
-    {
-        $this->ArchTypes->removeElement($archTypes);
-    }
-
-    /**
-     * Get ArchTypes
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getArchTypes()
-    {
-        return $this->ArchTypes;
-    }
-
-    /**
-     * Add FixedPoints
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\FixedPoint $fixedPoints
-     * @return Port
-     */
-    public function addFixedPoint(\BorderForce\Drt\EntityBundle\Entity\FixedPoint $fixedPoints)
-    {
-        $this->FixedPoints[] = $fixedPoints;
-
-        return $this;
-    }
-
-    /**
-     * Remove FixedPoints
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\FixedPoint $fixedPoints
-     */
-    public function removeFixedPoint(\BorderForce\Drt\EntityBundle\Entity\FixedPoint $fixedPoints)
-    {
-        $this->FixedPoints->removeElement($fixedPoints);
-    }
-
-    /**
-     * Get FixedPoints
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getFixedPoints()
-    {
-        return $this->FixedPoints;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass")
-     * @JMS\SerializedName("ArchyTypes")
-     */
-    private $ArchyTypes;
-
-
-    /**
      * Add ArchyTypes
      *
      * @param \BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass $archyTypes
@@ -362,13 +259,6 @@ class Port extends BasePort
     {
         return $this->ArchyTypes;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\FixedPointType")
-     * @JMS\SerializedName("FixedPointTypes")
-     */
-    private $FixedPointTypes;
-
 
     /**
      * Add FixedPointTypes

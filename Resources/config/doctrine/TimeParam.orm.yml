@@ -24,14 +24,12 @@ BorderForce\Drt\EntityBundle\Entity\TimeParam:
     DayOfWeek:  { type: string(10), nullable: true, name: day_of_week }
     MonthOfYear:  { type: string(10), nullable: true, name: month_of_year }
     HourOfDay:  { type: integer(8), nullable: true, name: hour_of_day }
-#    termsplit,flightsplit,termproctime,flightproctime,queu max desk min desk max pax min pax fixed points
-    ParamValue:  { type: integer(10), nullable: false }
-    isPercent:  { type: boolean, nullable: false }
-#    AssociationId: { type: integer(8), nullable: false }
-#    AssociationType: { type: string(50), nullable: false }
+    ParamValue:  { type: integer(10), nullable: false, name: param_value }
+    isPercent:  { type: boolean, nullable: false, name: is_percent }
+    hasDayOfWeek: { type: boolean, nullable: false, name: has_day_of_week }
+    hasMonthOfYear: { type: boolean, nullable: false, name: has_month_of_year }
+    hasHourOfDay: { type: boolean, nullable: false, name: has_hour_of_day }
+    HourOfDaySlice: { type: integer(2), nullable: true, name: hour_of_day_slice }
   uniqueConstraints:
     singleParamAtTime:
       columns: [discriminator,DayOfWeek, MonthOfYear, HourOfDay]
-#  indexes:
-#    idxtime: { name: idx_day, columns: [ DayOfWeek, MonthOfYear, HourOfDay ] }
-#    idxassoc: { name: idx_frn, columns: [ AssociationId, AssociationType ] }

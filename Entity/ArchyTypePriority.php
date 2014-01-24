@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * FixedPointTypes
+ * ArchyTypePriority
  */
-class FixedPointTypes
+class ArchyTypePriority
 {
     /**
      * @var integer
@@ -39,7 +39,7 @@ class FixedPointTypes
      * Set name
      *
      * @param string $name
-     * @return FixedPointTypes
+     * @return ArchyTypePriority
      */
     public function setName($name)
     {

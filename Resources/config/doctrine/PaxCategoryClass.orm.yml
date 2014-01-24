@@ -10,7 +10,7 @@ BorderForce\Drt\EntityBundle\Entity\PaxCategoryClass:
         strategy: AUTO
   fields:
     symbol:  { type: string(5), nullable: false }
-    name:  { type: string(5), nullable: false }
+    name:  { type: string(30), nullable: false }
 #  manyToOne:
 #    port:
 #      targetEntity: Port

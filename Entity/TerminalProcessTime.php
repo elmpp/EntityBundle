@@ -18,8 +18,8 @@ class TerminalProcessTime
     private $id;
 
     /**
-     * @var bool
-     * @JMS\Type("bool")
+     * @var boolean
+     * @JMS\Type("boolean")
      * @JMS\SerializedName("active")
      */
     private $active;
@@ -52,10 +52,10 @@ class TerminalProcessTime
     /**
      * Set active
      *
-     * @param \bool $active
+     * @param boolean $active
      * @return TerminalProcessTime
      */
-    public function setActive(\bool $active)
+    public function setActive($active)
     {
         $this->active = $active;
 
@@ -65,7 +65,7 @@ class TerminalProcessTime
     /**
      * Get active
      *
-     * @return \bool 
+     * @return boolean 
      */
     public function getActive()
     {

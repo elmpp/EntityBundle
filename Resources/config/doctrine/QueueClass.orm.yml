@@ -1,7 +1,7 @@
 BorderForce\Drt\EntityBundle\Entity\QueueClass:
   type: entity
   repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\QueueClassRepository
-  table: queue
+  table: queue_class
   id:
     id:
       type: integer
@@ -9,17 +9,10 @@ BorderForce\Drt\EntityBundle\Entity\QueueClass:
       generator:
         strategy: AUTO
   fields:
-    queuename:  { type: string(10), nullable: false }
-    colorcode:  { type: integer(2), nullable: false }
-    thresholdsla:  { type: integer(8), nullable: true }
-    staffedqueue:  { type: boolean, nullable: true }
-#  ManyToOne:
-#    Port:
-#      targetEntity: Terminal
-#      inversedBy: terminal
-#      joinColumn:
-#        name: term_id
-#        referencedColumnName: id
+    name:  { type: string(10), nullable: false }
+    color:  { type: integer(2), nullable: false }
+    sla:  { type: integer(8), nullable: true }
+    manned:  { type: boolean, nullable: true }
   uniqueConstraints:
     uniqueProcessTime:
-      columns: [queuename]
+      columns: [name]

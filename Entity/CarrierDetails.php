@@ -74,6 +74,13 @@ class CarrierDetails
     private $avgChoxTimeDateTime;
 
     /**
+     * @var integer
+     * @JMS\Type("integer")
+     * @JMS\SerializedName("carrier_type_id")
+     */
+    private $carrier_type_id;
+
+    /**
      * @var \BorderForce\Drt\EntityBundle\Entity\Port
      * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Port")
      * @JMS\SerializedName("LocalPort")
@@ -283,6 +290,29 @@ class CarrierDetails
     }
 
     /**
+     * Set carrier_type_id
+     *
+     * @param integer $carrierTypeId
+     * @return CarrierDetails
+     */
+    public function setCarrierTypeId($carrierTypeId)
+    {
+        $this->carrier_type_id = $carrierTypeId;
+
+        return $this;
+    }
+
+    /**
+     * Get carrier_type_id
+     *
+     * @return integer 
+     */
+    public function getCarrierTypeId()
+    {
+        return $this->carrier_type_id;
+    }
+
+    /**
      * Set LocalPort
      *
      * @param \BorderForce\Drt\EntityBundle\Entity\Port $localPort
@@ -326,35 +356,5 @@ class CarrierDetails
     public function getOriginPort()
     {
         return $this->OriginPort;
-    }
-    /**
-     * @var integer
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("carrier_type_id")
-     */
-    private $carrier_type_id;
-
-
-    /**
-     * Set carrier_type_id
-     *
-     * @param integer $carrierTypeId
-     * @return CarrierDetails
-     */
-    public function setCarrierTypeId($carrierTypeId)
-    {
-        $this->carrier_type_id = $carrierTypeId;
-
-        return $this;
-    }
-
-    /**
-     * Get carrier_type_id
-     *
-     * @return integer 
-     */
-    public function getCarrierTypeId()
-    {
-        return $this->carrier_type_id;
     }
 }

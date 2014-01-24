@@ -1,7 +1,7 @@
 BorderForce\Drt\EntityBundle\Entity\FixedPointType:
   type: entity
   repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\FixedPointRepository
-  table: fixedpoint
+  table: fixed_point
   id:
     id:
       type: integer

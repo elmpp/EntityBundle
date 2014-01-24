@@ -20,30 +20,30 @@ class QueueClass
     /**
      * @var string
      * @JMS\Type("string")
-     * @JMS\SerializedName("queuename")
+     * @JMS\SerializedName("name")
      */
-    private $queuename;
+    private $name;
 
     /**
      * @var integer
      * @JMS\Type("integer")
-     * @JMS\SerializedName("colorcode")
+     * @JMS\SerializedName("color")
      */
-    private $colorcode;
+    private $color;
 
     /**
      * @var integer
      * @JMS\Type("integer")
-     * @JMS\SerializedName("thresholdsla")
+     * @JMS\SerializedName("sla")
      */
-    private $thresholdsla;
+    private $sla;
 
     /**
      * @var boolean
      * @JMS\Type("boolean")
-     * @JMS\SerializedName("staffedqueue")
+     * @JMS\SerializedName("manned")
      */
-    private $staffedqueue;
+    private $manned;
 
 
     /**
@@ -57,94 +57,94 @@ class QueueClass
     }
 
     /**
-     * Set queuename
+     * Set name
      *
-     * @param string $queuename
+     * @param string $name
      * @return QueueClass
      */
-    public function setQueuename($queuename)
+    public function setName($name)
     {
-        $this->queuename = $queuename;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get queuename
+     * Get name
      *
      * @return string 
      */
-    public function getQueuename()
+    public function getName()
     {
-        return $this->queuename;
+        return $this->name;
     }
 
     /**
-     * Set colorcode
+     * Set color
      *
-     * @param integer $colorcode
+     * @param integer $color
      * @return QueueClass
      */
-    public function setColorcode($colorcode)
+    public function setColor($color)
     {
-        $this->colorcode = $colorcode;
+        $this->color = $color;
 
         return $this;
     }
 
     /**
-     * Get colorcode
+     * Get color
      *
      * @return integer 
      */
-    public function getColorcode()
+    public function getColor()
     {
-        return $this->colorcode;
+        return $this->color;
     }
 
     /**
-     * Set thresholdsla
+     * Set sla
      *
-     * @param integer $thresholdsla
+     * @param integer $sla
      * @return QueueClass
      */
-    public function setThresholdsla($thresholdsla)
+    public function setSla($sla)
     {
-        $this->thresholdsla = $thresholdsla;
+        $this->sla = $sla;
 
         return $this;
     }
 
     /**
-     * Get thresholdsla
+     * Get sla
      *
      * @return integer 
      */
-    public function getThresholdsla()
+    public function getSla()
     {
-        return $this->thresholdsla;
+        return $this->sla;
     }
 
     /**
-     * Set staffedqueue
+     * Set manned
      *
-     * @param boolean $staffedqueue
+     * @param boolean $manned
      * @return QueueClass
      */
-    public function setStaffedqueue($staffedqueue)
+    public function setManned($manned)
     {
-        $this->staffedqueue = $staffedqueue;
+        $this->manned = $manned;
 
         return $this;
     }
 
     /**
-     * Get staffedqueue
+     * Get manned
      *
      * @return boolean 
      */
-    public function getStaffedqueue()
+    public function getManned()
     {
-        return $this->staffedqueue;
+        return $this->manned;
     }
 }
