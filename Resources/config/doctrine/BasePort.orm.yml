@@ -25,3 +25,10 @@ BorderForce\Drt\EntityBundle\Entity\BasePort:
       columns: [name]
     uniquePortCode:
       columns: [code]
+  manyToOne:
+    PortType:
+      targetEntity: PortType
+      inversedBy: Ports
+      joinColumn:
+        name: port_type_id
+        referencedColumnName: id

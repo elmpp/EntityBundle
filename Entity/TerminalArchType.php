@@ -18,8 +18,8 @@ class TerminalArchType
     private $id;
 
     /**
-     * @var bool
-     * @JMS\Type("bool")
+     * @var boolean
+     * @JMS\Type("boolean")
      * @JMS\SerializedName("active")
      */
     private $active;
@@ -52,10 +52,10 @@ class TerminalArchType
     /**
      * Set active
      *
-     * @param \bool $active
+     * @param boolean $active
      * @return TerminalArchType
      */
-    public function setActive(\bool $active)
+    public function setActive($active)
     {
         $this->active = $active;
 
@@ -65,7 +65,7 @@ class TerminalArchType
     /**
      * Get active
      *
-     * @return \bool 
+     * @return boolean 
      */
     public function getActive()
     {

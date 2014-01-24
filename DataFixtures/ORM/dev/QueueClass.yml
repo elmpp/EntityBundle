@@ -1,0 +1,11 @@
+BorderForce\Drt\EntityBundle\Entity\QueueClass:
+  queue1:
+    name:  EEAQueue
+    color:  Blue
+    sla:  30
+    manned:  true
+  queue2:
+    name:  NonEEAQueue
+    color:  Red
+    sla:  45
+    manned:  true

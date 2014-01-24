@@ -45,6 +45,13 @@ class BasePort
      */
     private $country;
 
+    /**
+     * @var \BorderForce\Drt\EntityBundle\Entity\PortType
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\PortType")
+     * @JMS\SerializedName("PortType")
+     */
+    private $PortType;
+
 
     /**
      * Get id
@@ -146,5 +153,28 @@ class BasePort
     public function getCountry()
     {
         return $this->country;
+    }
+
+    /**
+     * Set PortType
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\PortType $portType
+     * @return BasePort
+     */
+    public function setPortType(\BorderForce\Drt\EntityBundle\Entity\PortType $portType = null)
+    {
+        $this->PortType = $portType;
+
+        return $this;
+    }
+
+    /**
+     * Get PortType
+     *
+     * @return \BorderForce\Drt\EntityBundle\Entity\PortType 
+     */
+    public function getPortType()
+    {
+        return $this->PortType;
     }
 }

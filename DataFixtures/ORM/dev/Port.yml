@@ -1,0 +1,27 @@
+BorderForce\Drt\EntityBundle\Entity\Port:
+  port1:
+    code:  LHR
+    city:  London
+    name:  London Heathrow
+    country:  United Kingdon
+    region: London
+    porttype: @porttype1
+    PaxSplits: [@paxsplit1,@paxsplit2,@paxsplit3,@paxsplit4,@paxsplit5,@paxsplit6,@paxsplit7]
+    PaxCategories: [@category1,@category2,@category3]
+    ProcessTimes: [@ptclass1,@ptclass2,@ptclass3,@ptclass4]
+    PortQueues: [@queue1,@queue2]
+    ArchyTypes: [@archytypeclass1,@archytypeclass2,@archytypeclass3,@archytypeclass4,@archytypeclass5,@archytypeclass6,@archytypeclass7]
+    FixedPointTypes: [@fp1,@fp2,@fp3,@fp4,@fp5,@fp6,@fp7]
+  port2:
+    code:  GTW
+    city:  London
+    name:  London Gatwick
+    country:  United Kingdon
+    region: London
+    porttype: @porttype1
+    PaxSplits: [@paxsplit1,@paxsplit2,@paxsplit3,@paxsplit4,@paxsplit5,@paxsplit6,@paxsplit7]
+    PaxCategories: [@category1,@category2,@category3]
+    ProcessTimes: [@ptclass1,@ptclass2,@ptclass3,@ptclass4]
+    PortQueues: [@queue1,@queue2]
+    ArchyTypes: [@archytypeclass1,@archytypeclass2,@archytypeclass3,@archytypeclass4,@archytypeclass5,@archytypeclass6,@archytypeclass7]
+    FixedPointTypes: [@fp1,@fp2,@fp3,@fp4,@fp5,@fp6,@fp7]

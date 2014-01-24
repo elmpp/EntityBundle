@@ -12,3 +12,9 @@ BorderForce\Drt\EntityBundle\Entity\CarrierSplitTimeParam:
       joinColumn:
         name: carrier_split_time_id
         referencedColumnName: id
+    PaxSplitClass:
+      targetEntity: PaxSplitClass
+      inversedBy: PaxSplitTimeClass
+      joinColumn:
+        name: pax_split_time_class_id
+        referencedColumnName: id

@@ -1,0 +1,7 @@
+BorderForce\Drt\EntityBundle\Entity\ArchyTypePriority:
+  priority1:
+    name:  Special
+  priority2:
+    name:  Executive
+  priority3:
+    name:  Standard

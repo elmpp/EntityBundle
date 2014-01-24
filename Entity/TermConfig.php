@@ -46,11 +46,11 @@ class TermConfig
     private $TerminalProcessTime;
 
     /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\TerminalWalkingTime
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\TerminalWalkingTime")
-     * @JMS\SerializedName("TerminalWalkingTime")
+     * @var \BorderForce\Drt\EntityBundle\Entity\GateWalkTime
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\GateWalkTime")
+     * @JMS\SerializedName("GateWalkTime")
      */
-    private $TerminalWalkingTime;
+    private $GateWalkTime;
 
 
     /**
@@ -154,36 +154,6 @@ class TermConfig
     {
         return $this->TerminalProcessTime;
     }
-
-    /**
-     * Set TerminalWalkingTime
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\TerminalWalkingTime $terminalWalkingTime
-     * @return TermConfig
-     */
-    public function setTerminalWalkingTime(\BorderForce\Drt\EntityBundle\Entity\TerminalWalkingTime $terminalWalkingTime = null)
-    {
-        $this->TerminalWalkingTime = $terminalWalkingTime;
-
-        return $this;
-    }
-
-    /**
-     * Get TerminalWalkingTime
-     *
-     * @return \BorderForce\Drt\EntityBundle\Entity\TerminalWalkingTime 
-     */
-    public function getTerminalWalkingTime()
-    {
-        return $this->TerminalWalkingTime;
-    }
-    /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\GateWalkTime
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\GateWalkTime")
-     * @JMS\SerializedName("GateWalkTime")
-     */
-    private $GateWalkTime;
-
 
     /**
      * Set GateWalkTime

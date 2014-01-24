@@ -1,0 +1,10 @@
+BorderForce\Drt\EntityBundle\Entity\PaxCategoryClass:
+  category1:
+    symbol: N
+    name: "Total Passengers"
+  category2:
+    symbol:  M
+    name: "Int-Dom Transit"
+  category3:
+    symbol: L
+    name:  "Int-Int Transit"

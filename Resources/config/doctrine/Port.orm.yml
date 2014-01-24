@@ -65,11 +65,4 @@ BorderForce\Drt\EntityBundle\Entity\Port:
         inverseJoinColumns:
           fixed_point_id:
             referencedColumnName: id
-  manyToOne:
-    PortType:
-      targetEntity: PortType
-      inversedBy: Ports
-      joinColumn:
-        name: port_type_id
-        referencedColumnName: id
 #Timestampable, blameable, softdelete

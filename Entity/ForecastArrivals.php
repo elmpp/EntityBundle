@@ -46,11 +46,11 @@ class ForecastArrivals
     private $passengersTransfer;
 
     /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\TerminalGate
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\TerminalGate")
-     * @JMS\SerializedName("TerminalGate")
+     * @var \BorderForce\Drt\EntityBundle\Entity\Gate
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Gate")
+     * @JMS\SerializedName("Gate")
      */
-    private $TerminalGate;
+    private $Gate;
 
     /**
      * @var \BorderForce\Drt\EntityBundle\Entity\CarrierDetails
@@ -170,26 +170,26 @@ class ForecastArrivals
     }
 
     /**
-     * Set TerminalGate
+     * Set Gate
      *
-     * @param \BorderForce\Drt\EntityBundle\Entity\TerminalGate $terminalGate
+     * @param \BorderForce\Drt\EntityBundle\Entity\Gate $gate
      * @return ForecastArrivals
      */
-    public function setTerminalGate(\BorderForce\Drt\EntityBundle\Entity\TerminalGate $terminalGate = null)
+    public function setGate(\BorderForce\Drt\EntityBundle\Entity\Gate $gate = null)
     {
-        $this->TerminalGate = $terminalGate;
+        $this->Gate = $gate;
 
         return $this;
     }
 
     /**
-     * Get TerminalGate
+     * Get Gate
      *
-     * @return \BorderForce\Drt\EntityBundle\Entity\TerminalGate 
+     * @return \BorderForce\Drt\EntityBundle\Entity\Gate 
      */
-    public function getTerminalGate()
+    public function getGate()
     {
-        return $this->TerminalGate;
+        return $this->Gate;
     }
 
     /**
@@ -236,35 +236,5 @@ class ForecastArrivals
     public function getBasePort()
     {
         return $this->BasePort;
-    }
-    /**
-     * @var \BorderForce\Drt\EntityBundle\Entity\Gate
-     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Gate")
-     * @JMS\SerializedName("Gate")
-     */
-    private $Gate;
-
-
-    /**
-     * Set Gate
-     *
-     * @param \BorderForce\Drt\EntityBundle\Entity\Gate $gate
-     * @return ForecastArrivals
-     */
-    public function setGate(\BorderForce\Drt\EntityBundle\Entity\Gate $gate = null)
-    {
-        $this->Gate = $gate;
-
-        return $this;
-    }
-
-    /**
-     * Get Gate
-     *
-     * @return \BorderForce\Drt\EntityBundle\Entity\Gate 
-     */
-    public function getGate()
-    {
-        return $this->Gate;
     }
 }

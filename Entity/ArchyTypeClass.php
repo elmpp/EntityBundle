@@ -25,11 +25,11 @@ class ArchyTypeClass
     private $name;
 
     /**
-     * @var string
-     * @JMS\Type("string")
-     * @JMS\SerializedName("priority")
+     * @var \BorderForce\Drt\EntityBundle\Entity\ArchyTypePriority
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\ArchyTypePriority")
+     * @JMS\SerializedName("PriorityType")
      */
-    private $priority;
+    private $PriorityType;
 
 
     /**
@@ -66,25 +66,25 @@ class ArchyTypeClass
     }
 
     /**
-     * Set priority
+     * Set PriorityType
      *
-     * @param string $priority
+     * @param \BorderForce\Drt\EntityBundle\Entity\ArchyTypePriority $priorityType
      * @return ArchyTypeClass
      */
-    public function setPriority($priority)
+    public function setPriorityType(\BorderForce\Drt\EntityBundle\Entity\ArchyTypePriority $priorityType = null)
     {
-        $this->priority = $priority;
+        $this->PriorityType = $priorityType;
 
         return $this;
     }
 
     /**
-     * Get priority
+     * Get PriorityType
      *
-     * @return string 
+     * @return \BorderForce\Drt\EntityBundle\Entity\ArchyTypePriority 
      */
-    public function getPriority()
+    public function getPriorityType()
     {
-        return $this->priority;
+        return $this->PriorityType;
     }
 }

@@ -18,15 +18,15 @@ class TerminalQueue
     private $id;
 
     /**
-     * @var bool
-     * @JMS\Type("bool")
+     * @var boolean
+     * @JMS\Type("boolean")
      * @JMS\SerializedName("manned")
      */
     private $manned;
 
     /**
-     * @var bool
-     * @JMS\Type("bool")
+     * @var boolean
+     * @JMS\Type("boolean")
      * @JMS\SerializedName("active")
      */
     private $active;
@@ -39,8 +39,8 @@ class TerminalQueue
     private $color;
 
     /**
-     * @var interger
-     * @JMS\Type("interger")
+     * @var integer
+     * @JMS\Type("integer")
      * @JMS\SerializedName("sla")
      */
     private $sla;
@@ -73,10 +73,10 @@ class TerminalQueue
     /**
      * Set manned
      *
-     * @param \bool $manned
+     * @param boolean $manned
      * @return TerminalQueue
      */
-    public function setManned(\bool $manned)
+    public function setManned($manned)
     {
         $this->manned = $manned;
 
@@ -86,7 +86,7 @@ class TerminalQueue
     /**
      * Get manned
      *
-     * @return \bool 
+     * @return boolean 
      */
     public function getManned()
     {
@@ -96,10 +96,10 @@ class TerminalQueue
     /**
      * Set active
      *
-     * @param \bool $active
+     * @param boolean $active
      * @return TerminalQueue
      */
-    public function setActive(\bool $active)
+    public function setActive($active)
     {
         $this->active = $active;
 
@@ -109,7 +109,7 @@ class TerminalQueue
     /**
      * Get active
      *
-     * @return \bool 
+     * @return boolean 
      */
     public function getActive()
     {
@@ -142,10 +142,10 @@ class TerminalQueue
     /**
      * Set sla
      *
-     * @param \interger $sla
+     * @param integer $sla
      * @return TerminalQueue
      */
-    public function setSla(\interger $sla)
+    public function setSla($sla)
     {
         $this->sla = $sla;
 
@@ -155,7 +155,7 @@ class TerminalQueue
     /**
      * Get sla
      *
-     * @return \interger 
+     * @return integer 
      */
     public function getSla()
     {

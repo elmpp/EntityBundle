@@ -1,0 +1,5 @@
+BorderForce\Drt\EntityBundle\Entity\PortType:
+  porttype1:
+    name:  Airport
+  porttype2:
+    name:  "Sea Port"

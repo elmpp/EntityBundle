@@ -1,0 +1,9 @@
+BorderForce\Drt\EntityBundle\Entity\ProcessTimeClass:
+  ptclass1:
+    name:  "EEA at Desk"
+  ptclass2:
+    name:  "Non-VISA at Desk"
+  ptclass3:
+    name:  "VISA at Desk"
+  ptclass4:
+    name:  "EEA at egate"

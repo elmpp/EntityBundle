@@ -1,7 +1,7 @@
 BorderForce\Drt\EntityBundle\Entity\PaxSplitClass:
   type: entity
   repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\PaxSplitClassRepository
-  table: paxsplit
+  table: pax_split_class
   id:
     id:
       type: integer

@@ -11,42 +11,12 @@ use JMS\Serializer\Annotation as JMS;
 class TerminalFixedPointParam extends TimeParam
 {
     /**
-     * @var integer
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("HourOfDay")
-     */
-    private $HourOfDay;
-
-    /**
      * @var \BorderForce\Drt\EntityBundle\Entity\TerminalFixedPoint
      * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\TerminalFixedPoint")
      * @JMS\SerializedName("TerminalFixedPoint")
      */
     private $TerminalFixedPoint;
 
-
-    /**
-     * Set HourOfDay
-     *
-     * @param integer $hourOfDay
-     * @return TerminalFixedPointParam
-     */
-    public function setHourOfDay($hourOfDay)
-    {
-        $this->HourOfDay = $hourOfDay;
-
-        return $this;
-    }
-
-    /**
-     * Get HourOfDay
-     *
-     * @return integer 
-     */
-    public function getHourOfDay()
-    {
-        return $this->HourOfDay;
-    }
 
     /**
      * Set TerminalFixedPoint

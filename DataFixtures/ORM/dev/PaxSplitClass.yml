@@ -1,0 +1,22 @@
+BorderForce\Drt\EntityBundle\Entity\PaxSplitClass:
+  paxsplit1:
+    symbol:  p
+    name:  "EEA Nationals"
+  paxsplit2:
+    symbol:  q
+    name:  "Non-VISA Nationals"
+  paxsplit3:
+    symbol:  r
+    name:  "VISA Nationals"
+  paxsplit4:
+    symbol:  s
+    name:  "EEA Nationals to gate"
+  paxsplit5:
+    symbol:  x
+    name:  "NON-VISA fast track"
+  paxsplit6:
+    symbol:  y
+    name:  "VISA fast track"
+  paxsplit7:
+    symbol:  k
+    name:  "Transit to non-transit control"
