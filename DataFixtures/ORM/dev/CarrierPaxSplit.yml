@@ -1,0 +1,145 @@
+BorderForce\Drt\EntityBundle\Entity\CarrierPaxSplit:
+  cps1:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit1
+  cps2:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit2
+  cps3:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit3
+  cps4:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit4
+  cps5:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit5
+  cps6:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit6
+  cps7:
+    active: true
+    CarrierDetails: @carrier1
+    PaxSplitClass: @paxsplit7
+
+  cps8:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit1
+  cps9:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit2
+  cps10:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit3
+  cps11:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit4
+  cps12:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit5
+  cps13:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit6
+  cps14:
+    active: true
+    CarrierDetails: @carrier2
+    PaxSplitClass: @paxsplit7
+
+  cps15:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit1
+  cps16:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit2
+  cps17:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit3
+  cps18:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit4
+  cp19:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit5
+  cps20:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit6
+  cps21:
+    active: true
+    CarrierDetails: @carrier3
+    PaxSplitClass: @paxsplit7
+
+  cps22:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit1
+  cps23:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit2
+  cps24:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit3
+  cps25:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit4
+  cps26:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit5
+  cps27:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit6
+  cps28:
+    active: true
+    CarrierDetails: @carrier4
+    PaxSplitClass: @paxsplit7
+
+  cps29:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit1
+  cps30:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit2
+  cps31:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit3
+  cps32:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit4
+  cps33:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit5
+  cps34:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit6
+  cps35:
+    active: true
+    CarrierDetails: @carrier5
+    PaxSplitClass: @paxsplit7

@@ -1,0 +1,5 @@
+BorderForce\Drt\EntityBundle\Entity\CarrierType:
+  ctype1:
+    name:  Airplane
+  ctype2:
+    name:  Ferry

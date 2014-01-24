@@ -357,4 +357,94 @@ class CarrierDetails
     {
         return $this->OriginPort;
     }
+    /**
+     * @var integer
+     * @JMS\Type("integer")
+     * @JMS\SerializedName("operator_id")
+     */
+    private $operator_id;
+
+
+    /**
+     * Set operator_id
+     *
+     * @param integer $operatorId
+     * @return CarrierDetails
+     */
+    public function setOperatorId($operatorId)
+    {
+        $this->operator_id = $operatorId;
+
+        return $this;
+    }
+
+    /**
+     * Get operator_id
+     *
+     * @return integer 
+     */
+    public function getOperatorId()
+    {
+        return $this->operator_id;
+    }
+    /**
+     * @var \BorderForce\Drt\EntityBundle\Entity\CarrierType
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\CarrierType")
+     * @JMS\SerializedName("CarrierType")
+     */
+    private $CarrierType;
+
+    /**
+     * @var \BorderForce\Drt\EntityBundle\Entity\Operator
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Operator")
+     * @JMS\SerializedName("Operator")
+     */
+    private $Operator;
+
+
+    /**
+     * Set CarrierType
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\CarrierType $carrierType
+     * @return CarrierDetails
+     */
+    public function setCarrierType(\BorderForce\Drt\EntityBundle\Entity\CarrierType $carrierType = null)
+    {
+        $this->CarrierType = $carrierType;
+
+        return $this;
+    }
+
+    /**
+     * Get CarrierType
+     *
+     * @return \BorderForce\Drt\EntityBundle\Entity\CarrierType 
+     */
+    public function getCarrierType()
+    {
+        return $this->CarrierType;
+    }
+
+    /**
+     * Set Operator
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\Operator $operator
+     * @return CarrierDetails
+     */
+    public function setOperator(\BorderForce\Drt\EntityBundle\Entity\Operator $operator = null)
+    {
+        $this->Operator = $operator;
+
+        return $this;
+    }
+
+    /**
+     * Get Operator
+     *
+     * @return \BorderForce\Drt\EntityBundle\Entity\Operator 
+     */
+    public function getOperator()
+    {
+        return $this->Operator;
+    }
 }

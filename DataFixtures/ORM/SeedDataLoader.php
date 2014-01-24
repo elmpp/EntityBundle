@@ -25,10 +25,15 @@ class SeedDataLoader extends DataFixtureLoader
             $folder . '/ArchyTypeClass.yml',
             $folder . '/PaxCategoryClass.yml',
             $folder . '/FixedPointType.yml',
+            $folder . '/CarrierType.yml',
+            $folder . '/Operator.yml',
             $folder . '/Port.yml',
+            $folder . '/CarrierDetails.yml',
             $folder . '/Terminal.yml',
             $folder . '/TerminalPaxSplit.yml',
-            $folder . '/TerminalSplitTimeParam.yml'
+            $folder . '/TerminalSplitTimeParam.yml',
+            $folder . '/CarrierPaxSplit.yml',
+            $folder . '/CarrierSplitTimeParam.yml'
         );
       }
       else {
@@ -41,10 +46,15 @@ class SeedDataLoader extends DataFixtureLoader
               $folder . '/ArchyTypeClass.yml',
               $folder . '/PaxCategoryClass.yml',
               $folder . '/FixedPointType.yml',
+              $folder . '/CarrierType.yml',
+              $folder . '/Operator.yml',
               $folder . '/Port.yml',
+              $folder . '/CarrierDetails.yml',
               $folder . '/Terminal.yml',
               $folder . '/TerminalPaxSplit.yml',
-              $folder . '/TerminalSplitTimeParam.yml'
+              $folder . '/TerminalSplitTimeParam.yml',
+              $folder . '/CarrierPaxSplit.yml',
+              $folder . '/CarrierSplitTimeParam.yml'
           );
       }
         

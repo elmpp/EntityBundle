@@ -1,0 +1,46 @@
+BorderForce\Drt\EntityBundle\Entity\CarrierDetails:
+  carrier1:
+    code:  BA102
+    paxOffRate:  20
+    carrierCapacity: 250
+    firstPaxOffTime: 10
+    Operator: @operator1
+    LocalPort: @port1
+    OriginPort: @port2
+    CarrierType: @ctype1
+  carrier2:
+    code:  VS201
+    paxOffRate:  20
+    carrierCapacity: 250
+    firstPaxOffTime: 10
+    Operator: @operator1
+    LocalPort: @port1
+    OriginPort: @port2
+    CarrierType: @ctype1
+  carrier3:
+    code:  BD901
+    paxOffRate:  20
+    carrierCapacity: 250
+    firstPaxOffTime: 10
+    Operator: @operator1
+    LocalPort: @port1
+    OriginPort: @port2
+    CarrierType: @ctype1
+  carrier4:
+    code:  EE100
+    paxOffRate:  20
+    carrierCapacity: 250
+    firstPaxOffTime: 10
+    Operator: @operator1
+    LocalPort: @port1
+    OriginPort: @port2
+    CarrierType: @ctype1
+  carrier5:
+    code:  CX255
+    paxOffRate:  20
+    carrierCapacity: 250
+    firstPaxOffTime: 10
+    Operator: @operator1
+    LocalPort: @port1
+    OriginPort: @port2
+    CarrierType: @ctype1

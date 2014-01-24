@@ -70,4 +70,34 @@ class CarrierSplitTimeParam extends TimeParam
     {
         return $this->PaxSplitClass;
     }
+    /**
+     * @var \BorderForce\Drt\EntityBundle\Entity\CarrierPaxSplit
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\CarrierPaxSplit")
+     * @JMS\SerializedName("CarrierPaxSplit")
+     */
+    private $CarrierPaxSplit;
+
+
+    /**
+     * Set CarrierPaxSplit
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\CarrierPaxSplit $carrierPaxSplit
+     * @return CarrierSplitTimeParam
+     */
+    public function setCarrierPaxSplit(\BorderForce\Drt\EntityBundle\Entity\CarrierPaxSplit $carrierPaxSplit = null)
+    {
+        $this->CarrierPaxSplit = $carrierPaxSplit;
+
+        return $this;
+    }
+
+    /**
+     * Get CarrierPaxSplit
+     *
+     * @return \BorderForce\Drt\EntityBundle\Entity\CarrierPaxSplit 
+     */
+    public function getCarrierPaxSplit()
+    {
+        return $this->CarrierPaxSplit;
+    }
 }

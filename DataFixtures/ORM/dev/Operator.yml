@@ -1,0 +1,16 @@
+BorderForce\Drt\EntityBundle\Entity\Operator:
+  operator1:
+    code:  BA
+    name:  "British Airways"
+  operator2:
+    code:  KLM
+    name:  "KLM"
+  operator3:
+    code:  DLT
+    name:  "Delta Airlines"
+  operator4:
+    code:  SA
+    name:  "Singapore Airlines"
+  operator5:
+    code:  AA
+    name:  "American Airlines"
