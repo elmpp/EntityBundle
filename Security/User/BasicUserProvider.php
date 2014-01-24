@@ -30,16 +30,6 @@ class BasicUserProvider implements UserProviderInterface {
     $this->apiClient   = $apiClient;
     $this->session     = $session;
     $this->userDetails = $userDetails;
-    
-//    foreach ($users as $username => $attributes) {
-//      $password = isset($attributes['password']) ? $attributes['password'] : null;
-//      $enabled = isset($attributes['enabled']) ? $attributes['enabled'] : true;
-//      $name     = isset($attributes['name']) ? $attributes['name'] : null;
-//      $roles = isset($attributes['roles']) ? $attributes['roles'] : array();
-//      $user = new BasicUser($username, $password, $name, $roles, $enabled, true, true, true);
-////var_dump($user);
-//      $this->createUser($user);
-//    }
   }
   
   public function createUser($username, array $userDetails) {
@@ -81,12 +71,10 @@ class BasicUserProvider implements UserProviderInterface {
           throw $ex;
       }
 
-//      $user = $this->users[strtolower($username)];
-
       $user = $this->createUser($username, $this->userDetails[strtolower($username)]);
+      $this->users[strtolower($username)] = $user;
       
-      return new BasicUser($user->getUsername(), $user->getPassword(), $user->getName(), $user->getRoles(), $user->isEnabled(), $user->isAccountNonExpired(),
-              $user->isCredentialsNonExpired(), $user->isAccountNonLocked());
+      return $user;
    }
    
    /**
