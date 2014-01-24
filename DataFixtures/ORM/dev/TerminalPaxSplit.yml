@@ -1,0 +1,145 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalPaxSplit:
+  ps1:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit1
+  ps2:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit2
+  ps3:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit3
+  ps4:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit4
+  ps5:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit5
+  ps6:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit6
+  ps7:
+    active: true
+    Terminal: @terminal1
+    PaxSplitClass: @paxsplit7
+
+  ps8:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit1
+  ps9:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit2
+  ps10:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit3
+  ps11:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit4
+  ps12:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit5
+  ps13:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit6
+  ps14:
+    active: true
+    Terminal: @terminal2
+    PaxSplitClass: @paxsplit7
+
+  ps15:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit1
+  ps16:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit2
+  ps17:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit3
+  ps18:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit4
+  p19:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit5
+  ps20:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit6
+  ps21:
+    active: true
+    Terminal: @terminal3
+    PaxSplitClass: @paxsplit7
+
+  ps22:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit1
+  ps23:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit2
+  ps24:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit3
+  ps25:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit4
+  ps26:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit5
+  ps27:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit6
+  ps28:
+    active: true
+    Terminal: @terminal4
+    PaxSplitClass: @paxsplit7
+
+  ps29:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit1
+  ps30:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit2
+  ps31:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit3
+  ps32:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit4
+  ps33:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit5
+  ps34:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit6
+  ps35:
+    active: true
+    Terminal: @terminal5
+    PaxSplitClass: @paxsplit7
