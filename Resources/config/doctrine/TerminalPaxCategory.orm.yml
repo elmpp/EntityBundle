@@ -1,0 +1,29 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalPaxCategory:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalPaxCategory
+  table: terminal_pax_category
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    active: { type: boolean, nullable: false }
+  manyToOne:
+    Terminal:
+      targetEntity: Terminal
+      inversedBy: Queue
+      joinColumn:
+        name: terminal_id
+        referencedColumnName: id
+    PaxCategoryClass:
+      targetEntity: PaxCategoryClass
+      inversedBy: TerminalPaxCategory
+      joinColumn:
+        name: pax_category_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [terminal_id,pax_category_id]
+#Timestampable, blameable, softdelete

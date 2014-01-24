@@ -1,0 +1,30 @@
+BorderForce\Drt\EntityBundle\Entity\Terminal:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalRepository
+  table: terminal
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    code:  { type: string(10), nullable: false }
+    name:  { type: string(50), nullable: false }
+    avgWalkTime: { type: integer(8), nullable: true, name: avg_walk_time }
+    avgWalkTimeDateTime: { type: datetime, nullable: true }
+    avgChoxTime: { type: integer(8), nullable: true, name: avg_chox_time }
+    avgChoxTimeDateTime: { type: datetime, nullable: true }
+  manyToOne:
+    Port:
+      targetEntity: Port
+      inversedBy: Terminals
+      joinColumn:
+        name: port_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [port_id,code]
+    uniquePortTermName:
+      columns: [port_id,name]
+#Timestampable, blameable, softdelete

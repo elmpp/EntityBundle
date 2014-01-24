@@ -1,0 +1,29 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalPaxSplit:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalPaxSplit
+  table: terminal_pax_split
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    active: { type: boolean, nullable: false }
+  manyToOne:
+    Terminal:
+      targetEntity: Terminal
+      inversedBy: TerminalPaxSplit
+      joinColumn:
+        name: terminal_id
+        referencedColumnName: id
+    PaxSplitClass:
+      targetEntity: PaxSplitClass
+      inversedBy: TerminalPaxSplit
+      joinColumn:
+        name: pax_split_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [terminal_id,pax_split_id]
+#Timestampable, blameable, softdelete

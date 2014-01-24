@@ -1,0 +1,24 @@
+BorderForce\Drt\EntityBundle\Entity\Gate:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\GateRepository
+  table: gate
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    name:  { type: string(50), nullable: false }
+    status: { type: boolean, nullable: false}
+  manyToOne:
+    Terminal:
+      targetEntity: Terminal
+      inversedBy: Gates
+      joinColumn:
+        name: terminal_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniqueGateIdx:
+      columns: [terminal_id, name]
+#Timestampable, blameable, softdelete

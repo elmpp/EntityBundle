@@ -1,0 +1,14 @@
+BorderForce\Drt\EntityBundle\Entity\CarrierProcessingTimeParam:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\CarrierProcessingTimeParamRepository
+  table: carrier_processing_time_param
+#  attributeOverride:
+#    DayOfWeek:  { type: string(10), nullable: false, name: day_of_week }
+#    MonthOfYear:  { type: string(10), nullable: false, name: month_of_year }
+  manyToOne:
+    CarrierDetails:
+      targetEntity: CarrierDetails
+      inversedBy: ParamProcessingTime
+      joinColumn:
+        name: carrier_processing_time_id
+        referencedColumnName: id

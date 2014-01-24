@@ -1,0 +1,16 @@
+BorderForce\Drt\EntityBundle\Entity\WalkTimeClass:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\WalkTimeClassRepository
+  table: walktype
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    name:  { type: string(5), nullable: false }
+  uniqueConstraints:
+    uniqueWalkTypeName:
+      columns: [name]
+#Timestampable, blameable, softdelete

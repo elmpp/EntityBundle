@@ -1,0 +1,13 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalQueueTimeParam:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalQueueTimeParamRepository
+  table: terminal_queue_time_param
+#  attributeOverride:
+#    HourOfDay:  { type: integer(8), nullable: false, name: hour_of_day }
+  manyToOne:
+    TerminalQueue:
+      targetEntity: TerminalQueue
+      inversedBy: ParamQueueTime
+      joinColumn:
+        name: terminal_queue_id
+        referencedColumnName: id

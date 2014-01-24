@@ -1,0 +1,29 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalFixedPoint:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalFixedPointRepository
+  table: terminal_fixed_point
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    active: { type: boolean, nullable: false }
+  manyToOne:
+    Terminal:
+      targetEntity: Terminal
+      inversedBy: FixedPoint
+      joinColumn:
+        name: terminal_id
+        referencedColumnName: id
+    FixedPointsTypes:
+      targetEntity: FixedPointType
+      inversedBy: TerminalFixedPoint
+      joinColumn:
+        name: termina_fixed_point_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [terminal_id,termina_fixed_point_id]
+#Timestampable, blameable, softdelete

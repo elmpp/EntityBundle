@@ -1,0 +1,53 @@
+BorderForce\Drt\EntityBundle\Entity\CarrierDetails:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\CarrierDetailsRepository
+  table: carrierdetails
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    code:  { type: string(10), nullable: false }
+#    carrier type as flight,bus or ferry
+#    carriertype:  { type: string(10), nullable: false }
+#    subtype as internationa,domestic etc Check gatwick flightcode type table
+#    carriersubtype:  { type: string(50), nullable: true }
+#    city:  { type: string(50), nullable: true }
+#    airport:  { type: string(50), nullable: true }
+#    country:  { type: string(50), nullable: true }
+    paxOffRate: { type: integer(8), nullable: true, name: pax_off_rate }
+    carrierCapacity: { type: integer(8), nullable: true, name: carrier_capacity }
+    firstPaxOffTime: { type: integer(8), nullable: true, name: first_pax_off_time }
+    avgWalkTime: { type: integer(8), nullable: true, name: avg_walk_time }
+    avgWalkTimeDateTime: { type: datetime, nullable: true }
+    avgChoxTime: { type: integer(8), nullable: true, name: avg_chox_time }
+    avgChoxTimeDateTime: { type: datetime, nullable: true }
+    carrier_type_id: { type: integer(12), nullable: false }
+  manyToOne:
+    CarrierType:
+      targetEntity: CarrierType
+      inversedBy: Carrier
+      joinColumn:
+        name: carrier_type_id
+        referencedColumnName: id
+#  indexes:
+#    idxcarriercode: { name: idx_carrier_code, columns: [ carriercode ] }
+  uniqueConstraints:
+    uniqueCarrierCodeType:
+      columns: [code,carrier_type_id]
+  manyToOne:
+    LocalPort:
+      targetEntity: Port
+      inversedBy: Carrier
+      joinColumn:
+        name: local_port_id
+        referencedColumnName: id
+    OriginPort:
+      targetEntity: BasePort
+      inversedBy: Carrier
+      joinColumn:
+        name: origin_port_id
+        referencedColumnName: id
+#Timestampable, blameable, softdelete

@@ -1,0 +1,35 @@
+BorderForce\Drt\EntityBundle\Entity\GateWalkTime:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\GateWalkTimeRepository
+  table: gate_walk_time
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    time: { type: integer, nullable: false }
+  manyToOne:
+    FromGate:
+      targetEntity: Gate
+      inversedBy: FromGateWalkTime
+      joinColumn:
+        name: from_gate_id
+        referencedColumnName: id
+    ToGate:
+      targetEntity: Gate
+      inversedBy: ToGateWalkTime
+      joinColumn:
+        name: to_gate_id
+        referencedColumnName: id
+    WalkTimeClass:
+      targetEntity: WalkTimeClass
+      inversedBy: GateWalkTime
+      joinColumn:
+        name: walk_class_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [from_gate_id,to_gate_id,walk_class_id]
+#Timestampable, blameable, softdelete

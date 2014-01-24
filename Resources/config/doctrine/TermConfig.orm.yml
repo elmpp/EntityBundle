@@ -1,0 +1,42 @@
+BorderForce\Drt\EntityBundle\Entity\TermConfig:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TermConfigRepository
+  table: termconfig
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    formula:  { type: string(100), nullable: false }
+    #Validation needed
+  manyToOne:
+    TerminalArchType:
+      targetEntity: TerminalArchType
+      inversedBy: TermConfig
+      joinColumn:
+        name: terminal_arch_type_id
+        referencedColumnName: id
+    TerminalQueue:
+      targetEntity: TerminalQueue
+      inversedBy: TermConfig
+      joinColumn:
+        name: terminal_queue_id
+        referencedColumnName: id
+    TerminalProcessTime:
+      targetEntity: TerminalProcessTime
+      inversedBy: TermConfig
+      joinColumn:
+        name: terminal_queue_id
+        referencedColumnName: id
+    GateWalkTime:
+      targetEntity: GateWalkTime
+      inversedBy: TermConfig
+      joinColumn:
+        name: gate_walk_time_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniqueTerminalArchType:
+      columns: [terminal_arch_type_id]
+#Timestampable, blameable, softdelete

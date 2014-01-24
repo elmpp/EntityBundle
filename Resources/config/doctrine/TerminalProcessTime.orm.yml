@@ -1,0 +1,29 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalProcessTime:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalProcessTime
+  table: terminal_processing_time
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    active: { type: boolean, nullable: false }
+  manyToOne:
+    Terminal:
+      targetEntity: Terminal
+      inversedBy: TerminalProcessTime
+      joinColumn:
+        name: terminal_id
+        referencedColumnName: id
+    ProcessTimeClass:
+      targetEntity: ProcessTimeClass
+      inversedBy: TerminalProcessTime
+      joinColumn:
+        name: processing_time_class_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [terminal_id,processing_time_class_id]
+#Timestampable, blameable, softdelete

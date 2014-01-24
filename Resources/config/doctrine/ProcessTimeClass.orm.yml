@@ -1,0 +1,23 @@
+BorderForce\Drt\EntityBundle\Entity\ProcessTimeClass:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\ProcessTimeClassRepository
+  table: processtime
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    processtimename:  { type: string(5), nullable: false }
+#  ManyToOne:
+#    Port:
+#      targetEntity: Port
+#      inversedBy: port
+#      joinColumn:
+#        name: port_id
+#        referencedColumnName: id
+  uniqueConstraints:
+    uniqueProcessTime:
+      columns: [processtimename]
+#Timestampable, blameable, softdelete

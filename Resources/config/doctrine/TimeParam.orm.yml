@@ -1,0 +1,37 @@
+BorderForce\Drt\EntityBundle\Entity\TimeParam:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TimeParamRepository
+  table: timeparam
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: discriminator
+    type: string
+    length: 255
+  discriminatorMap:
+    queue: TerminalQueueTimeParam
+    fixed_points: TerminalFixedPointParam
+    terminal_pt: TerminalProcessingTimeParam
+    carrier_pt: CarrierProcessingTimeParam
+    terminal_spl: TerminalSplitTimeParam
+    carrier_spl: CarrierSplitTimeParam
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    DayOfWeek:  { type: string(10), nullable: true, name: day_of_week }
+    MonthOfYear:  { type: string(10), nullable: true, name: month_of_year }
+    HourOfDay:  { type: integer(8), nullable: true, name: hour_of_day }
+#    termsplit,flightsplit,termproctime,flightproctime,queu max desk min desk max pax min pax fixed points
+    ParamValue:  { type: integer(10), nullable: false }
+    isPercent:  { type: boolean, nullable: false }
+#    AssociationId: { type: integer(8), nullable: false }
+#    AssociationType: { type: string(50), nullable: false }
+  uniqueConstraints:
+    singleParamAtTime:
+      columns: [discriminator,DayOfWeek, MonthOfYear, HourOfDay]
+#  indexes:
+#    idxtime: { name: idx_day, columns: [ DayOfWeek, MonthOfYear, HourOfDay ] }
+#    idxassoc: { name: idx_frn, columns: [ AssociationId, AssociationType ] }

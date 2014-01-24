@@ -1,0 +1,15 @@
+BorderForce\Drt\EntityBundle\Entity\FixedPointType:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\FixedPointRepository
+  table: fixedpoint
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    name:  { type: string(10), nullable: false }
+  uniqueConstraints:
+    uniqueTermFP:
+      columns: [name]

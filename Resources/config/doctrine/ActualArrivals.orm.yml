@@ -1,0 +1,44 @@
+BorderForce\Drt\EntityBundle\Entity\ActualArrivals:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\ActualArrivalsRepository
+  table: actual_arrivals
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    scheduledDate: { type: datetime, format: 'yyyy-MM-dd hh:mm', nullable: false, name: scheduled_date }
+#    origin:  { type: string(50), nullable: false }
+    estimated:  { type: datetime, nullable: true, format: 'yyyy-MM-dd hh:mm' }
+    touchdown:  { type: datetime, nullable: true, format: 'yyyy-MM-dd hh:mm', name: touchdown }
+    choxEstimated:  { type: datetime, nullable: true, format: 'yyyy-MM-dd hh:mm', name: chox_estimated }
+    actualChox:  { type: datetime, nullable: true, format: 'yyyy-MM-dd hh:mm', name: actual_chox }
+    passengersTotal: { type: integer(8), nullable: true, name: passenger_total }
+#    If only total trasit given then set other to 0
+    passengersIntInt: { type: integer(8), nullable: true, name: passenger_int_int }
+    passengersIntDom: { type: integer(8), nullable: true, name: passenger_int_dom }
+#    status: [cancelled, scheduled]
+#  indexes:
+#    idxact_carriercode: { name: idx_act_carriercode, columns: [ carrier_code ] }
+#    idxscheduledDate: { name: idx_scheduledDate, columns: [ scheduledDate ] }
+  manyToOne:
+    Gate:
+      targetEntity: Gate
+      inversedBy: Arrivals
+      joinColumn:
+        name: terminal_gate_id
+        referencedColumnName: id
+    CarrierDetails:
+      targetEntity: CarrierDetails
+      inversedBy: Arrivals
+      joinColumn:
+        name: carrier_id
+        referencedColumnName: id
+    BasePort:
+      targetEntity: BasePort
+      inversedBy: Arrivals
+      joinColumn:
+        name: base_port_id
+        referencedColumnName: id

@@ -1,0 +1,29 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalArchType:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalArchTypeRepository
+  table: terminal_arch_type
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    active: { type: boolean, nullable: false }
+  manyToOne:
+    Terminal:
+      targetEntity: Terminal
+      inversedBy: TerminalArchType
+      joinColumn:
+        name: terminal_id
+        referencedColumnName: id
+    ArchyTypeClass:
+      targetEntity: ArchyTypeClass
+      inversedBy: TerminalArchType
+      joinColumn:
+        name: arch_type_id
+        referencedColumnName: id
+  uniqueConstraints:
+    uniquePortTermCode:
+      columns: [terminal_id,arch_type_id]
+#Timestampable, blameable, softdelete

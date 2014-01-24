@@ -1,0 +1,38 @@
+BorderForce\Drt\EntityBundle\Entity\ForecastArrivals:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\ForecastArrivalsRepository
+  table: forecast_arrivals
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    scheduledDate: { type: datetime, format: 'yyyy-MM-dd hh:mm', nullable: false, name: scheduled_date }
+#    If only total trasit given then set other to 0
+    type: { type: integer(1), nullable: false }
+    passengersDirect: { type: integer(2), nullable: false }
+    passengersTransfer: { type: integer(2), nullable: false }
+#  indexes:
+#    idxfccarriercode: { name: idx_fc_carriercode, columns: [ carrier_code ] }
+#    idxfcscheduledDate: { name: idx_fc_scheduledDate, columns: [ scheduledDate ] }
+  manyToOne:
+    Gate:
+      targetEntity: Gate
+      inversedBy: Arrivals
+      joinColumn:
+        name: terminal_gate_id
+        referencedColumnName: id
+    CarrierDetails:
+      targetEntity: CarrierDetails
+      inversedBy: Arrivals
+      joinColumn:
+        name: carrier_id
+        referencedColumnName: id
+    BasePort:
+      targetEntity: BasePort
+      inversedBy: Arrivals
+      joinColumn:
+        name: base_port_id
+        referencedColumnName: id

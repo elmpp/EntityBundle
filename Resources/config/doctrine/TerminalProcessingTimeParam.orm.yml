@@ -1,0 +1,15 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalProcessingTimeParam:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalProcessingTimeParamRepository
+  table: terminal_processing_time_param
+#  attributeOverride:
+#    DayOfWeek:  { type: string(10), nullable: false, name: day_of_week }
+#    MonthOfYear:  { type: string(10), nullable: false, name: month_of_year }
+#    HourOfDay:  { type: integer(8), nullable: false, name: hour_of_day }
+  manyToOne:
+    TerminalProcessTime:
+      targetEntity: TerminalProcessTime
+      inversedBy: ParamProcessingTime
+      joinColumn:
+        name: terminal_processing_time_id
+        referencedColumnName: id

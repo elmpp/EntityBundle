@@ -1,0 +1,13 @@
+BorderForce\Drt\EntityBundle\Entity\ArchyTypeClass:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\ArchyTypeRepository
+  table: archytype
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    name:  { type: string(5), nullable: false }
+    priority:  { type: string(15), nullable: false }

@@ -1,0 +1,13 @@
+BorderForce\Drt\EntityBundle\Entity\TerminalFixedPointParam:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\TerminalFixedPointParamRepository
+  table: terminal_fixed_point_param
+#  attributeOverride:
+#    HourOfDay:  { type: integer(8), nullable: false, name: hour_of_day }
+  manyToOne:
+    TerminalFixedPoint:
+      targetEntity: TerminalFixedPoint
+      inversedBy: ParamFixedPoint
+      joinColumn:
+        name: terminal_fixed_point_id
+        referencedColumnName: id

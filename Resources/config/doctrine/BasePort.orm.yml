@@ -1,0 +1,27 @@
+BorderForce\Drt\EntityBundle\Entity\BasePort:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\BasePortRepository
+  table: base_port
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: discriminator
+    type: string
+    length: 255
+  discriminatorMap:
+    local: Port
+  id:
+    id:
+      type: integer
+      length: 12
+      generator:
+        strategy: AUTO
+  fields:
+    code:  { type: string(10), nullable: false }
+    city:  { type: string(50), nullable: false }
+    name:  { type: string(50), nullable: false }
+    country:  { type: string(50), nullable: true }
+  uniqueConstraints:
+    uniquePortName:
+      columns: [name]
+    uniquePortCode:
+      columns: [code]

@@ -1,0 +1,75 @@
+BorderForce\Drt\EntityBundle\Entity\Port:
+  type: entity
+  repositoryClass: BorderForce\Drt\EntityBundle\Entity\Repository\PortRepository
+  table: port
+  fields:
+    region:  { type: string(50), nullable: true }
+  manyToMany:
+    PaxSplits:
+      targetEntity: PaxSplitClass
+      joinTable:
+        name: port_paxsplit
+        joinColumns:
+          port_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          pax_split_id:
+            referencedColumnName: id
+    PaxCategories:
+      targetEntity: PaxCategoryClass
+      joinTable:
+        name: port_paxcategory
+        joinColumns:
+          port_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          pax_category_id:
+            referencedColumnName: id
+    ProcessTimes:
+      targetEntity: ProcessTimeClass
+      joinTable:
+        name: port_processtime
+        joinColumns:
+          port_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          process_time_id:
+            referencedColumnName: id
+    PortQueues:
+      targetEntity: QueueClass
+      joinTable:
+        name: port_queue
+        joinColumns:
+          port_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          queue_id:
+            referencedColumnName: id
+    ArchyTypes:
+      targetEntity: ArchyTypeClass
+      joinTable:
+        name: port_archtype
+        joinColumns:
+          port_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          arch_type_id:
+            referencedColumnName: id
+    FixedPointTypes:
+      targetEntity: FixedPointType
+      joinTable:
+        name: port_fixed_point
+        joinColumns:
+          port_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          fixed_point_id:
+            referencedColumnName: id
+  manyToOne:
+    PortType:
+      targetEntity: PortType
+      inversedBy: Ports
+      joinColumn:
+        name: port_type_id
+        referencedColumnName: id
+#Timestampable, blameable, softdelete
