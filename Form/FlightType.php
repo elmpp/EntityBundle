@@ -16,8 +16,6 @@ class FlightType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-      $entityManager = $options['em'];
-      $transformer = new DataTransformer\AirlineToIDTransformer($entityManager);
       
       $builder
         ->add('flightNumber')
@@ -28,10 +26,8 @@ class FlightType extends AbstractType
         ->add('choxEstimated', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('chox', 'datetime', array('input' => 'datetime', 'widget' => 'single_text', 'date_format' => 'dd-MM-yyyy hh:ii:ss'))
         ->add('passengers')
-        ->add(
-          $builder->create('airline', 'text', array())->addModelTransformer($transformer)
-          )
-        ;
+        ->add('airline', 'nested_cascade_create_entity', array('fqcn' => 'BorderForce\Drt\EntityBundle\Entity\Airline', 'form' => $this))
+      ;
     }
     
     /**

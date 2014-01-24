@@ -1,7 +1,9 @@
-parameters:
+#parameters:
 #    border_force_drt_base.example.class: BorderForce\Drt\EntityBundle\Example
 
 services:
-#    border_force_drt_base.example:
-#        class: %border_force_drt_base.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    nested_cascade_create_entity:
+        class: BorderForce\Drt\EntityBundle\Form\Type\NestedCascadeCreateEntityType
+        arguments: ["@doctrine.orm.entity_manager", "@jms_serializer"]
+        tags:
+            - { name: form.type, alias: nested_cascade_create_entity }

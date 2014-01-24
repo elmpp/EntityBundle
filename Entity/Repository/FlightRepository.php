@@ -30,4 +30,18 @@ class FlightRepository extends EntityRepository
     return $flight;
   }
   
+  public function findAllOrderedByTouchdownEstimated() {
+    
+    try {
+      $flight = $this->getEntityManager()->createQuery(
+        'select f from BorderForceDrtEntityBundle:Flight f
+         order by f.touchdownEstimated')
+        ->execute();
+    }
+    catch (\Doctrine\Orm\NoResultException $e) {
+      $flight = null;
+    }
+    return $flight;
+  }
+  
 }
