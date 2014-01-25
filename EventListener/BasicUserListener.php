@@ -36,6 +36,7 @@ class BasicUserListener {
     }
 
     $user = $this->userProvider->loadUserByUsername('user');
+    
     $securityToken = new UsernamePasswordToken($user, null, 'dev', $user->getRoles());
     $this->securityContext->setToken($securityToken);
   }
