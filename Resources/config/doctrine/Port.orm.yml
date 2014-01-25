@@ -65,4 +65,8 @@ BorderForce\Drt\EntityBundle\Entity\Port:
         inverseJoinColumns:
           fixed_point_id:
             referencedColumnName: id
+  oneToMany:
+      Terminals:
+          targetEntity: Terminal
+          mappedBy: Port
 #Timestampable, blameable, softdelete

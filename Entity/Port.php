@@ -292,4 +292,44 @@ class Port extends BasePort
     {
         return $this->FixedPointTypes;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Terminal")
+     * @JMS\SerializedName("Terminals")
+     */
+    private $Terminals;
+
+
+    /**
+     * Add Terminals
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\Terminal $terminals
+     * @return Port
+     */
+    public function addTerminal(\BorderForce\Drt\EntityBundle\Entity\Terminal $terminals)
+    {
+        $this->Terminals[] = $terminals;
+
+        return $this;
+    }
+
+    /**
+     * Remove Terminals
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\Terminal $terminals
+     */
+    public function removeTerminal(\BorderForce\Drt\EntityBundle\Entity\Terminal $terminals)
+    {
+        $this->Terminals->removeElement($terminals);
+    }
+
+    /**
+     * Get Terminals
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTerminals()
+    {
+        return $this->Terminals;
+    }
 }

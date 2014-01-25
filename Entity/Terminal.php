@@ -237,4 +237,51 @@ class Terminal
     {
         return $this->Port;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     * @JMS\Type("BorderForce\Drt\EntityBundle\Entity\Gate")
+     * @JMS\SerializedName("Gates")
+     */
+    private $Gates;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Gates = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add Gates
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\Gate $gates
+     * @return Terminal
+     */
+    public function addGate(\BorderForce\Drt\EntityBundle\Entity\Gate $gates)
+    {
+        $this->Gates[] = $gates;
+
+        return $this;
+    }
+
+    /**
+     * Remove Gates
+     *
+     * @param \BorderForce\Drt\EntityBundle\Entity\Gate $gates
+     */
+    public function removeGate(\BorderForce\Drt\EntityBundle\Entity\Gate $gates)
+    {
+        $this->Gates->removeElement($gates);
+    }
+
+    /**
+     * Get Gates
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getGates()
+    {
+        return $this->Gates;
+    }
 }

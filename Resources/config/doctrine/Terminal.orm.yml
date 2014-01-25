@@ -27,4 +27,8 @@ BorderForce\Drt\EntityBundle\Entity\Terminal:
       columns: [port_id,code]
     uniquePortTermName:
       columns: [port_id,name]
+  oneToMany:
+      Gates:
+        targetEntity: Gate
+        mappedBy: Terminal
 #Timestampable, blameable, softdelete
